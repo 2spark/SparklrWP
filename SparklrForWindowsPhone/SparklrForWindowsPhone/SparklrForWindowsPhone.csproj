@@ -349,7 +349,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\..\SparklrSharp\Sparklr Library\SparklrSharp\SparklrSharp.csproj">
+    <ProjectReference Include="..\Sparklr Library\SparklrSharp\SparklrSharp.csproj">
       <Project>{a9122034-0867-4837-9228-5322024335bb}</Project>
       <Name>SparklrSharp</Name>
     </ProjectReference>
