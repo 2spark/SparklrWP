@@ -1,0 +1,4 @@
+artifacts:
+  - path: sparklrwp\SparklrForWindowsPhone\SparklrForWindowsPhone\Bin
+    name: SparklrApp
+    type: zip
