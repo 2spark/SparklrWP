@@ -1,7 +1,7 @@
 #Work in progress
 This is a pre-pre-pre-pre-alpha project and we need code the 100% of the app
 
-#Sparklr on Windows Phone 8.1 [![Build status](https://ci.appveyor.com/api/projects/status/y5p2uwckle4pngiv)](https://ci.appveyor.com/project/Marocco2/sparklrwp)
+#Sparklr on Windows Phone 8.1 [![Build status](https://ci.appveyor.com/api/projects/status/y5p2uwckle4pngiv?retina=true)](https://ci.appveyor.com/project/Marocco2/sparklrwp)
 It is an upcoming client for the social network [Sparklr*](http://www.sparklr.me), which is currently in a closed beta phase. Although this app is created by a bunch of third-party-devs, we can say that we offer the first dedicated app for the growing social network.
 ##Feature:
 - [ ] chat
