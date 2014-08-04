@@ -61,43 +61,44 @@
                 <ScrollViewer>
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="0" />
+                            <RowDefinition Height="Auto" />
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <StackPanel Grid.Row="1">
+                        <StackPanel Grid.Row="0">
                             <telerikPrimitivesNamespace:RadPointerContentControl TargetPoint="197, 100">
                                 <telerikPrimitives:RadTextBox x:Name="PART_TextBox"
                                                           Watermark="Write a post"
                                                           AcceptsReturn="True"
                                                           ActionButtonVisibility="Visible" BorderBrush="#BF000000" Background="#BF000000" Foreground="White" SelectionForeground="Black" MinHeight="100" VerticalAlignment="Center" BorderThickness="0">
-                            <telerikPrimitives:RadTextBox.ActionButtonStyle>
-                                <Style TargetType="telerikTextBox:TextBoxActionButton">
-                                    <Setter Property="ButtonType"
+                                    <telerikPrimitives:RadTextBox.ActionButtonStyle>
+                                        <Style TargetType="telerikTextBox:TextBoxActionButton">
+                                            <Setter Property="ButtonType"
                                                 Value="Custom"/>
-                                    <Setter Property="RestStateImageSource"
+                                            <Setter Property="RestStateImageSource"
                                                 Value="Images/SendIcon.png"/>
-                                </Style>
-                            </telerikPrimitives:RadTextBox.ActionButtonStyle>
-                        </telerikPrimitives:RadTextBox>
-                    </telerikPrimitivesNamespace:RadPointerContentControl>
+                                        </Style>
+                                    </telerikPrimitives:RadTextBox.ActionButtonStyle>
+                                </telerikPrimitives:RadTextBox>
+                            </telerikPrimitivesNamespace:RadPointerContentControl>
                         </StackPanel>
-                        <phone:LongListSelector Grid.Row="2" ItemsSource="{Binding Items}" BorderThickness="0" Background="White" VerticalAlignment="Bottom">
-                    <phone:LongListSelector.Foreground>
-                        <SolidColorBrush Color="Black"/>
-                    </phone:LongListSelector.Foreground>
-                    <phone:LongListSelector.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0,-5,0,1">
-                                <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" Foreground="Black"/>
-                                <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}">
-                                    <TextBlock.Foreground>
-                                        <SolidColorBrush Color="Black"/>
-                                    </TextBlock.Foreground>
-                                </TextBlock>
-                            </StackPanel>
-                        </DataTemplate>
-                    </phone:LongListSelector.ItemTemplate>
-                </phone:LongListSelector>
+                        
+                        <phone:LongListSelector Grid.Row="1" ItemsSource="{Binding Items}" BorderThickness="0" Background="White" VerticalAlignment="Bottom">
+                            <phone:LongListSelector.Foreground>
+                                <SolidColorBrush Color="Black"/>
+                            </phone:LongListSelector.Foreground>
+                            <phone:LongListSelector.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Margin="0,-5,0,1">
+                                        <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" Foreground="Black"/>
+                                        <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}">
+                                            <TextBlock.Foreground>
+                                                <SolidColorBrush Color="Black"/>
+                                            </TextBlock.Foreground>
+                                        </TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </phone:LongListSelector.ItemTemplate>
+                        </phone:LongListSelector>
                     </Grid>
                 </ScrollViewer>
             </phone:PivotItem>

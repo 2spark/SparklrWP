@@ -43,9 +43,9 @@
 
             <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" >
                 <TextBlock x:Name="UISparklrUsername" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Width="174"/>
-                <TextBox x:Name="SparklrUsername" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="436"/>
+                <TextBox x:Name="SparklrUsername" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" KeyDown="checkForEnter" />
                 <TextBlock x:Name="UISparklrPassword" HorizontalAlignment="Left"   TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Width="174"/>
-                <PasswordBox x:Name="SparklrPassword" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="436"/>
+                <PasswordBox x:Name="SparklrPassword" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="436" KeyDown="checkForEnter" />
             </StackPanel>
 
         </Grid>
