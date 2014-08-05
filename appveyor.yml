@@ -1,3 +1,6 @@
+before_build:
+  - cmd: git clone -q https://github.com/ChrisK91/SparklrSharp.git c:\projects\sparklrwp\SparklrSharp
+
 artifacts:
   - path: SparklrForWindowsPhone\SparklrForWindowsPhone\Bin\ARM\Debug\SparklrForWindowsPhone_Debug_ARM.xap
     name: Sparklr ARM Debug
