@@ -8,6 +8,7 @@
     xmlns:telerikPrimitivesNamespace="clr-namespace:Telerik.Windows.Controls.Primitives;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:telerikTextBox="clr-namespace:Telerik.Windows.Controls.PhoneTextBox;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:telerikDataBoundListbox="clr-namespace:Telerik.Windows.Controls.DataBoundListBox;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -23,7 +24,7 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
-            <RowDefinition Height="0" />
+            <RowDefinition Height="80" />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <!-- LOCALIZATION NOTE:
@@ -46,295 +47,44 @@
          -->
 
         <!--Pivot Control-->
-        <StackPanel  Background="#FF454050" Grid.Row="1">
+        <StackPanel  Background="#FF454050" Grid.Row="0">
             <TextBlock FontSize="36" FontFamily="/SparklrForWindowsPhone;component/Fonts/Fonts.zip#Courgette" Margin="24,12,0,0" Foreground="White">2spark*</TextBlock>
-
         </StackPanel>
-        <phone:Pivot Foreground="{StaticResource PhoneContrastForegroundBrush}" Grid.Row="2" Margin="0,80,0,0" Background="White" >
-
-            <!--Pivot item one-->
-            <phone:PivotItem FontFamily="Segoe WP" BorderThickness="0" Background="White" Margin="12,7,12,0" >
-                <phone:PivotItem.Header>
-                    <TextBlock FontSize="30" FontFamily="Segoe WP Semibold" Foreground="Black">EVERYTHING</TextBlock>
-                </phone:PivotItem.Header>
-                <!--Double line list with text wrapping-->
-                <ScrollViewer>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <StackPanel Grid.Row="0">
-                            <telerikPrimitivesNamespace:RadPointerContentControl TargetPoint="197, 100">
-                                <telerikPrimitives:RadTextBox x:Name="PART_TextBox"
-                                                          Watermark="Write a post"
-                                                          AcceptsReturn="True"
-                                                          ActionButtonVisibility="Visible" BorderBrush="#BF000000" Background="#BF000000" Foreground="White" SelectionForeground="Black" MinHeight="100" VerticalAlignment="Center" BorderThickness="0">
-                                    <telerikPrimitives:RadTextBox.ActionButtonStyle>
-                                        <Style TargetType="telerikTextBox:TextBoxActionButton">
-                                            <Setter Property="ButtonType"
-                                                Value="Custom"/>
-                                            <Setter Property="RestStateImageSource"
-                                                Value="Images/SendIcon.png"/>
-                                        </Style>
-                                    </telerikPrimitives:RadTextBox.ActionButtonStyle>
-                                </telerikPrimitives:RadTextBox>
-                            </telerikPrimitivesNamespace:RadPointerContentControl>
-                        </StackPanel>
-                        
-                        <phone:LongListSelector Grid.Row="1" ItemsSource="{Binding Items}" BorderThickness="0" Background="White" VerticalAlignment="Bottom">
-                            <phone:LongListSelector.Foreground>
-                                <SolidColorBrush Color="Black"/>
-                            </phone:LongListSelector.Foreground>
-                            <phone:LongListSelector.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel Margin="0,-5,0,1">
-                                        <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" Foreground="Black"/>
-                                        <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}">
-                                            <TextBlock.Foreground>
-                                                <SolidColorBrush Color="Black"/>
-                                            </TextBlock.Foreground>
-                                        </TextBlock>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </phone:LongListSelector.ItemTemplate>
-                        </phone:LongListSelector>
-                    </Grid>
-                </ScrollViewer>
-            </phone:PivotItem>
-
-            <phone:PivotItem FontSize="10">
-                <phone:PivotItem.Header>
-                    <TextBlock FontSize="30" FontFamily="Segoe WP Semibold" Foreground="Black">POPULAR</TextBlock>
-                </phone:PivotItem.Header>
-
-                <!--Double line list no text wrapping-->
-                <phone:LongListSelector ItemsSource="{Binding Items}" BorderThickness="0" Background="White">
-                    <phone:LongListSelector.Foreground>
-                        <SolidColorBrush Color="Black"/>
-                    </phone:LongListSelector.Foreground>
-                    <phone:LongListSelector.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0,-5,0,1">
-                                <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" Foreground="Black"/>
-                                <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}">
-                                    <TextBlock.Foreground>
-                                        <SolidColorBrush Color="Black"/>
-                                    </TextBlock.Foreground>
-                                </TextBlock>
-                            </StackPanel>
-                        </DataTemplate>
-                    </phone:LongListSelector.ItemTemplate>
-                </phone:LongListSelector>
-            </phone:PivotItem>
-
-            <!--Pivot item two-->
-            <phone:PivotItem FontSize="10">
-                <phone:PivotItem.Header>
-                    <TextBlock FontSize="30" FontFamily="Segoe WP Semibold" Foreground="Black">FOLLOWING</TextBlock>
-                </phone:PivotItem.Header>
-                <ScrollViewer>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="0" />
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <StackPanel Grid.Row="1">
-                            <telerikPrimitivesNamespace:RadPointerContentControl TargetPoint="197, 100">
-                                <telerikPrimitives:RadTextBox x:Name="PART2_TextBox"
-                                                          Watermark="Write a post"
-                                                          AcceptsReturn="True"
-                                                          ActionButtonVisibility="Visible" BorderBrush="#BF000000" Background="#BF000000" Foreground="White" SelectionForeground="Black" MinHeight="100" VerticalAlignment="Center" BorderThickness="0">
-                                    <telerikPrimitives:RadTextBox.ActionButtonStyle>
-                                        <Style TargetType="telerikTextBox:TextBoxActionButton">
-                                            <Setter Property="ButtonType"
-                                                Value="Custom"/>
-                                            <Setter Property="RestStateImageSource"
-                                                Value="Images/SendIcon.png"/>
-                                        </Style>
-                                    </telerikPrimitives:RadTextBox.ActionButtonStyle>
-                                </telerikPrimitives:RadTextBox>
-                            </telerikPrimitivesNamespace:RadPointerContentControl>
-                        </StackPanel>
-                        <phone:LongListSelector Grid.Row="2" ItemsSource="{Binding Items}" BorderThickness="0" Background="White" VerticalAlignment="Bottom">
-                            <phone:LongListSelector.Foreground>
-                                <SolidColorBrush Color="Black"/>
-                            </phone:LongListSelector.Foreground>
-                            <phone:LongListSelector.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel Margin="0,-5,0,1">
-                                        <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" Foreground="Black"/>
-                                        <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}">
-                                            <TextBlock.Foreground>
-                                                <SolidColorBrush Color="Black"/>
-                                            </TextBlock.Foreground>
-                                        </TextBlock>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </phone:LongListSelector.ItemTemplate>
-                        </phone:LongListSelector>
-                    </Grid>
-                </ScrollViewer>
-            </phone:PivotItem>
-
-            <phone:PivotItem FontSize="10">
-                <phone:PivotItem.Header>
-                    <TextBlock FontSize="30" FontFamily="Segoe WP Semibold" Foreground="Black" >MUSIC</TextBlock>
-                </phone:PivotItem.Header>
-
-                <!--Double line list no text wrapping-->
-                <phone:LongListSelector ItemsSource="{Binding Items}" BorderThickness="0" Background="White">
-                    <phone:LongListSelector.Foreground>
-                        <SolidColorBrush Color="Black"/>
-                    </phone:LongListSelector.Foreground>
-                    <phone:LongListSelector.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0,-5,0,1">
-                                <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" Foreground="Black"/>
-                                <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}">
-                                    <TextBlock.Foreground>
-                                        <SolidColorBrush Color="Black"/>
-                                    </TextBlock.Foreground>
-                                </TextBlock>
-                            </StackPanel>
-                        </DataTemplate>
-                    </phone:LongListSelector.ItemTemplate>
-                </phone:LongListSelector>
-            </phone:PivotItem>
-
-            <phone:PivotItem FontSize="10">
-                <phone:PivotItem.Header>
-                    <TextBlock FontSize="30" FontFamily="Segoe WP Semibold" Foreground="Black">FUNNY</TextBlock>
-                </phone:PivotItem.Header>
-
-                <!--Double line list no text wrapping-->
-                <phone:LongListSelector ItemsSource="{Binding Items}" BorderThickness="0" Background="White">
-                    <phone:LongListSelector.Foreground>
-                        <SolidColorBrush Color="Black"/>
-                    </phone:LongListSelector.Foreground>
-                    <phone:LongListSelector.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0,-5,0,1">
-                                <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" Foreground="Black"/>
-                                <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}">
-                                    <TextBlock.Foreground>
-                                        <SolidColorBrush Color="Black"/>
-                                    </TextBlock.Foreground>
-                                </TextBlock>
-                            </StackPanel>
-                        </DataTemplate>
-                    </phone:LongListSelector.ItemTemplate>
-                </phone:LongListSelector>
-            </phone:PivotItem>
-
-            <phone:PivotItem FontSize="10">
-                <phone:PivotItem.Header>
-                    <TextBlock FontSize="30" FontFamily="Segoe WP Semibold" Foreground="Black">TECH</TextBlock>
-                </phone:PivotItem.Header>
-
-                <!--Double line list no text wrapping-->
-                <phone:LongListSelector ItemsSource="{Binding Items}" BorderThickness="0" Background="White">
-                    <phone:LongListSelector.Foreground>
-                        <SolidColorBrush Color="Black"/>
-                    </phone:LongListSelector.Foreground>
-                    <phone:LongListSelector.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0,-5,0,1">
-                                <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" Foreground="Black"/>
-                                <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}">
-                                    <TextBlock.Foreground>
-                                        <SolidColorBrush Color="Black"/>
-                                    </TextBlock.Foreground>
-                                </TextBlock>
-                            </StackPanel>
-                        </DataTemplate>
-                    </phone:LongListSelector.ItemTemplate>
-                </phone:LongListSelector>
-            </phone:PivotItem>
-
-            <phone:PivotItem FontSize="10">
-                <phone:PivotItem.Header>
-                    <TextBlock FontSize="30" FontFamily="Segoe WP Semibold" Foreground="Black">GAMING</TextBlock>
-                </phone:PivotItem.Header>
-
-                <!--Double line list no text wrapping-->
-                <phone:LongListSelector ItemsSource="{Binding Items}" BorderThickness="0" Background="White">
-                    <phone:LongListSelector.Foreground>
-                        <SolidColorBrush Color="Black"/>
-                    </phone:LongListSelector.Foreground>
-                    <phone:LongListSelector.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0,-5,0,1">
-                                <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" Foreground="Black"/>
-                                <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}">
-                                    <TextBlock.Foreground>
-                                        <SolidColorBrush Color="Black"/>
-                                    </TextBlock.Foreground>
-                                </TextBlock>
-                            </StackPanel>
-                        </DataTemplate>
-                    </phone:LongListSelector.ItemTemplate>
-                </phone:LongListSelector>
-            </phone:PivotItem>
-
-            <phone:PivotItem FontSize="10">
-                <phone:PivotItem.Header>
-                    <TextBlock FontSize="30" FontFamily="Segoe WP Semibold" Foreground="Black">ART</TextBlock>
-                </phone:PivotItem.Header>
-
-                <!--Double line list no text wrapping-->
-                <phone:LongListSelector ItemsSource="{Binding Items}" BorderThickness="0" Background="White">
-                    <phone:LongListSelector.Foreground>
-                        <SolidColorBrush Color="Black"/>
-                    </phone:LongListSelector.Foreground>
-                    <phone:LongListSelector.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0,-5,0,1">
-                                <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" Foreground="Black"/>
-                                <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}">
-                                    <TextBlock.Foreground>
-                                        <SolidColorBrush Color="Black"/>
-                                    </TextBlock.Foreground>
-                                </TextBlock>
-                            </StackPanel>
-                        </DataTemplate>
-                    </phone:LongListSelector.ItemTemplate>
-                </phone:LongListSelector>
-            </phone:PivotItem>
-
-            <phone:PivotItem FontSize="10">
-                <phone:PivotItem.Header>
-                    <TextBlock FontSize="30" FontFamily="Segoe WP Semibold" Foreground="Black">MISC</TextBlock>
-                </phone:PivotItem.Header>
-
-                <!--Double line list no text wrapping-->
-                <phone:LongListSelector ItemsSource="{Binding Items}" BorderThickness="0" Background="White">
-                    <phone:LongListSelector.Foreground>
-                        <SolidColorBrush Color="Black"/>
-                    </phone:LongListSelector.Foreground>
-                    <phone:LongListSelector.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0,-5,0,1">
-                                <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" Foreground="Black"/>
-                                <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}">
-                                    <TextBlock.Foreground>
-                                        <SolidColorBrush Color="Black"/>
-                                    </TextBlock.Foreground>
-                                </TextBlock>
-                            </StackPanel>
-                        </DataTemplate>
-                    </phone:LongListSelector.ItemTemplate>
-                </phone:LongListSelector>
-            </phone:PivotItem>
+        
+        <phone:Pivot Grid.Row="1" Background="White" ItemsSource="{Binding Items}">
+            <phone:Pivot.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock FontSize="30" FontFamily="Segoe WP Semibold" Foreground="Black" Text="{Binding Path=Network}" />
+                </DataTemplate>
+            </phone:Pivot.HeaderTemplate>
+            <phone:Pivot.ItemTemplate>
+                <DataTemplate>
+                    <telerikPrimitives:RadDataBoundListBox ItemsSource="{Binding Posts}" Margin="12,-16,12,12">
+                        <telerikPrimitives:RadDataBoundListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0,12">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    
+                                    <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding Content}" Foreground="Black" />
+                                    <TextBlock Grid.Row="1" TextAlignment="Right" Text="{Binding User.Name}" Foreground="Gray" />
+                                </Grid>
+                            </DataTemplate>
+                        </telerikPrimitives:RadDataBoundListBox.ItemTemplate>
+                    </telerikPrimitives:RadDataBoundListBox>
+                </DataTemplate>
+            </phone:Pivot.ItemTemplate>
         </phone:Pivot>
-
+        
         <!--Uncomment to see an alignment grid to help ensure your controls are
             aligned on common boundaries.  The image has a top margin of -32px to
             account for the System Tray. Set this to 0 (or remove the margin altogether)
             if the System Tray is hidden.
 
             Before shipping remove this XAML and the image itself.-->
-        <Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="1" IsHitTestVisible="True" />
+        <Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="1" IsHitTestVisible="True" Visibility="Visible" />
 
     </Grid>
 

@@ -6,20 +6,24 @@ using SparklrForWindowsPhone.Helpers;
 using SparklrSharp;
 using SparklrSharp.Extensions;
 using SparklrSharp.Sparklr;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SparklrForWindowsPhone.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
+        public readonly string[] Networks = { "following", "popular", "everything", "music", "funny", "tech", "gaming", "art", "misc" };
+
         public MainViewModel()
         {
-            this.Items = new ObservableCollection<ItemViewModel>();
+            this.Items = new ObservableCollection<StreamPageViewModel>();
         }
 
         /// <summary>
         /// A collection for ItemViewModel objects.
         /// </summary>
-        public ObservableCollection<ItemViewModel> Items { get; private set; }
+        public ObservableCollection<StreamPageViewModel> Items { get; private set; }
 
         /// <summary>
         /// Sample property that returns a localized string
@@ -36,21 +40,13 @@ namespace SparklrForWindowsPhone.ViewModels
         /// </summary>
         public async void LoadData()
         {
+            //TODO: Is this the right place to show the indicator? Maybe move to *Page.cs
             GlobalLoadingIndicator.Start();
 
-            // Sample data; replace with real data
-            Stream everythingStream = await Stream.InstanciateStreamAsync("everything", Housekeeper.ServiceConnection);
-
-            foreach(Post p in everythingStream.Posts)
+            foreach(string s in Networks)
             {
-                Items.Add(new ItemViewModel() {
-                    LineOne = p.Author.Handle,
-                    LineTwo = p.Content,
-                    LineThree = p.CommentCount.ToString()
-                });
+                Items.Add(await StreamPageViewModel.CreateInstanceAsync(s));
             }
-
-            this.IsDataLoaded = true;
 
             GlobalLoadingIndicator.Stop();
         }

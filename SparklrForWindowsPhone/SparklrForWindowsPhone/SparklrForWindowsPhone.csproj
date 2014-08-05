@@ -140,7 +140,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\ItemViewModel.cs" />
+    <Compile Include="ViewModels\PostViewModel.cs" />
+    <Compile Include="ViewModels\StreamPageViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
   </ItemGroup>
@@ -347,9 +348,11 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Sparklr Library\SparklrSharp\SparklrSharp.csproj">
+    <Folder Include="Controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SparklrSharp\Sparklr Library\SparklrSharp\SparklrSharp.csproj">
       <Project>{a9122034-0867-4837-9228-5322024335bb}</Project>
       <Name>SparklrSharp</Name>
     </ProjectReference>
