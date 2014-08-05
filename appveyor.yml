@@ -1,4 +1,23 @@
 artifacts:
-  - path: sparklrwp\SparklrForWindowsPhone\SparklrForWindowsPhone\Bin
-    name: SparklrApp
-    type: zip
+  - path: SparklrForWindowsPhone\SparklrForWindowsPhone\Bin\ARM\Debug\SparklrForWindowsPhone_Debug_ARM.xap
+    name: Sparklr ARM Debug
+
+  - path: SparklrForWindowsPhone\SparklrForWindowsPhone\Bin\ARM\Release\SparklrForWindowsPhone_Release_ARM.xap
+    name: Sparklr ARM Release
+
+  - path: SparklrForWindowsPhone\SparklrForWindowsPhone\Bin\x86\Debug\SparklrForWindowsPhone_Debug_x86.xap
+    name: Sparklr x86 Debug
+
+  - path: SparklrForWindowsPhone\SparklrForWindowsPhone\Bin\x86\Release\SparklrForWindowsPhone_Release_x86.xap
+    name: Sparklr x86 Release
+
+
+platform:
+  - x86
+  - ARM
+
+configuration:
+  - Debug
+  - Release
+
+test: off
