@@ -12,6 +12,7 @@ using SparklrForWindowsPhone.Helpers;
 using System.Windows.Media;
 using System.Diagnostics;
 using SparklrSharp;
+using SparklrForWindowsPhone.ViewModels;
 
 namespace SparklrForWindowsPhone
 {
@@ -57,7 +58,6 @@ namespace SparklrForWindowsPhone
         }
 
        
-
         void conn_CurrentUserIdentified(object sender, SparklrSharp.Sparklr.UserIdentifiedEventArgs e)
         {
             Helpers.GlobalLoadingIndicator.Stop();
@@ -71,6 +71,11 @@ namespace SparklrForWindowsPhone
         private void ApplicationBarMenuItem_Click(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/Pages/About.xaml", UriKind.Relative));
+        }
+
+        private void RadDataBoundListBox_DataRequested(object sender, EventArgs e)
+        {
+            App.ViewModel.LoadMore(MainPivot.SelectedIndex);
         }
 
         // Sample code for building a localized ApplicationBar

@@ -52,6 +52,8 @@ namespace SparklrForWindowsPhone.ViewModels
             }
         }
 
+        internal Stream stream = null;
+
         internal static async Task<StreamPageViewModel> CreateInstanceAsync(string s)
         {
             StreamPageViewModel svm = new StreamPageViewModel(s);
@@ -61,7 +63,7 @@ namespace SparklrForWindowsPhone.ViewModels
             sw1.Start();
 #endif
 
-            Stream stream = await Housekeeper.ServiceConnection.GetStreamAsync(s);
+            svm.stream = await Housekeeper.ServiceConnection.GetStreamAsync(s);
 
 #if DEBUG
             sw1.Stop();
@@ -69,7 +71,7 @@ namespace SparklrForWindowsPhone.ViewModels
             sw.Start();
 #endif
             
-            foreach(Post p in stream.Posts)
+            foreach(Post p in svm.stream.Posts)
             {
                 svm.Posts.Add(new PostViewModel(p.Author, p.Content));
             }
@@ -81,6 +83,18 @@ namespace SparklrForWindowsPhone.ViewModels
 #endif
 
             return svm;
+        }
+
+        internal async Task LoadMore()
+        {
+            int previousCount = this.Posts.Count + 1;
+
+            await stream.LoadOlderPosts(Housekeeper.ServiceConnection);
+
+            for(int i = previousCount; i < stream.Posts.Count; i++)
+            {
+                this.Posts.Add(new PostViewModel(stream.Posts[i].Author, stream.Posts[i].Content));
+            }
         }
     }
 }

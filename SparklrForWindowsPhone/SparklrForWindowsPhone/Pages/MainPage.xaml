@@ -50,8 +50,8 @@
         <StackPanel  Background="#FF454050" Grid.Row="0">
             <TextBlock FontSize="36" FontFamily="/SparklrForWindowsPhone;component/Fonts/Fonts.zip#Courgette" Margin="24,12,0,0" Foreground="White">2spark*</TextBlock>
         </StackPanel>
-        
-        <phone:Pivot Grid.Row="1" Background="White" ItemsSource="{Binding Items}">
+
+        <phone:Pivot Grid.Row="1" Background="White" ItemsSource="{Binding Items}" x:Name="MainPivot">
             <phone:Pivot.HeaderTemplate>
                 <DataTemplate>
                     <TextBlock FontSize="30" FontFamily="Segoe WP Semibold" Foreground="Black" Text="{Binding Path=Network}" />
@@ -59,25 +59,20 @@
             </phone:Pivot.HeaderTemplate>
             <phone:Pivot.ItemTemplate>
                 <DataTemplate>
-                    <telerikPrimitives:RadDataBoundListBox ItemsSource="{Binding Posts}" Margin="12,-16,12,12">
+                    <telerikPrimitives:RadDataBoundListBox Margin="12,-16,12,0" ItemsSource="{Binding Posts}" DataVirtualizationMode="OnDemandAutomatic" DataRequested="RadDataBoundListBox_DataRequested">
                         <telerikPrimitives:RadDataBoundListBox.ItemTemplate>
                             <DataTemplate>
-                                <Grid Margin="0,12">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition />
-                                        <RowDefinition />
-                                    </Grid.RowDefinitions>
-                                    
-                                    <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding Content}" Foreground="Black" />
-                                    <TextBlock Grid.Row="1" TextAlignment="Right" Text="{Binding User.Name}" Foreground="Gray" />
-                                </Grid>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Foreground="Black" Text="{Binding Content}" TextWrapping="Wrap" />
+                                    <TextBlock Foreground="Gray" Text="{Binding User.Handle}" TextAlignment="Right" />
+                                </StackPanel>
                             </DataTemplate>
                         </telerikPrimitives:RadDataBoundListBox.ItemTemplate>
                     </telerikPrimitives:RadDataBoundListBox>
                 </DataTemplate>
             </phone:Pivot.ItemTemplate>
         </phone:Pivot>
-        
+
         <!--Uncomment to see an alignment grid to help ensure your controls are
             aligned on common boundaries.  The image has a top margin of -32px to
             account for the System Tray. Set this to 0 (or remove the margin altogether)

@@ -50,5 +50,18 @@ namespace SparklrForWindowsPhone.ViewModels
 
             GlobalLoadingIndicator.Stop();
         }
+
+        /// <summary>
+        /// Loads more posts
+        /// </summary>
+        /// <param name="index">The index of the network where more posts should be loaded</param>
+        internal async void LoadMore(int index)
+        {
+            GlobalLoadingIndicator.Start();
+
+            await this.Items[index].LoadMore();
+
+            GlobalLoadingIndicator.Stop();
+        }
     }
 }
