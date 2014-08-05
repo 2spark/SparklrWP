@@ -17,11 +17,5 @@ It is an upcoming client for the social network [Sparklr*](http://www.sparklr.me
 ##How do I get it?
 The app is currently under heavy development, so it's not available in the marketplace right now. We do however have a build server that offers snapshots. If you have an unlocked device, head over to 
 ###https://ci.appveyor.com/project/Marocco2/sparklrwp
-
-You have to:
-- [Download the deployment agent](http://appveyor-ftp.azurewebsites.net/AppveyorDeploymentAgent.msi)
-- Add the enviroment key: er3p275798rapo5q
-- Download lastest builds :)
-
 to download an highly unstable development build. As usual, we are not responsible for any lost data or damages to your device. Also, we can't be held liable if you're getting addicted to either the sparklr network or our app.
 
