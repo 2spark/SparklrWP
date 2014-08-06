@@ -28,3 +28,6 @@ test: off
 build:
   project: SparklrForWindowsPhone\SparklrForWindowsPhone.sln
   verbosity: normal
+  
+on_success:
+  - cmd: git tag AppVeyorBuild
