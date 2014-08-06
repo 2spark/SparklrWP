@@ -31,5 +31,5 @@ build:
   
 on_success:
   - cmd: git tag AppVeyorBuild
-  - cmd: git push origin --tags
+  - cmd: git push origin AppVeyorBuild
 
