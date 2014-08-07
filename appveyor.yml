@@ -19,8 +19,8 @@ artifacts:
 
 
 platform:
-  - x86
   - ARM
+  - x86
 
 configuration:
   - Release
