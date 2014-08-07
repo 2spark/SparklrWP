@@ -1,5 +1,5 @@
 before_build:
-  - cmd: git clone -q https://github.com/ChrisK91/SparklrSharp.git c:\projects\sparklrwp\SparklrSharp
+  - cmd: git clone -q https://github.com/ChrisK91/SparklrSharp.git c:\projects\sparklrwp\SparklrSharp --depth 1
   
 shallow_clone: true
 
