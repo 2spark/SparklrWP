@@ -29,7 +29,15 @@ build:
   project: SparklrForWindowsPhone\SparklrForWindowsPhone.sln
   verbosity: normal
   
+matrix:
+  fast_finish: true     # set this flag to immediately finish build once one of the jobs fails.
+  allow_failures:
+    - platform: x86
+      configuration: Debug
+    - platform: ARM
+      configuration: Debug
+
 on_success:
-  - cmd: git tag $(PLATFORM)_$(APPVEYOR_BUILD_VERSION)
-  - cmd: git push https://6540826d8a3b35ee133e148a1b2000502fd90e07:@github.com/2spark/SparklrWP.git $(PLATFORM)_$(APPVEYOR_BUILD_VERSION)
+  - cmd: git tag $PLATFORM_$APPVEYOR_BUILD_VERSION
+  - cmd: git push https://6540826d8a3b35ee133e148a1b2000502fd90e07:@github.com/2spark/SparklrWP.git --tags
 
