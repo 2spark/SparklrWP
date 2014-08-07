@@ -40,6 +40,6 @@ matrix:
       configuration: Debug
 
 on_success:
-  - cmd: git tag $PLATFORM_$APPVEYOR_BUILD_VERSION
+  - ps: git tag $PLATFORM_$APPVEYOR_BUILD_VERSION
   - cmd: git push https://6540826d8a3b35ee133e148a1b2000502fd90e07:@github.com/2spark/SparklrWP.git --tags
 
