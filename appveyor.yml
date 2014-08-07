@@ -1,5 +1,6 @@
 before_build:
   - cmd: git clone -q https://github.com/ChrisK91/SparklrSharp.git c:\projects\sparklrwp\SparklrSharp --depth 1
+  - ps: $env:PLATFORM
   
 shallow_clone: false # git tag doesn't work if it's true
 
