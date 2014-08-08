@@ -17,7 +17,6 @@ artifacts:
   - path: SparklrForWindowsPhone\SparklrForWindowsPhone\Bin\x86\Release\SparklrForWindowsPhone_Release_x86.xap
     name: Sparklr x86 Release
 
-
 platform:
   - ARM
   - x86
