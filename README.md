@@ -18,7 +18,7 @@ It is an upcoming client for the social network [Sparklr*](http://www.sparklr.me
 The app is currently under heavy development, so it's not available in the marketplace right now. We do however have a build server that offers snapshots. If you have an unlocked device, head over to 
 ###https://ci.appveyor.com/project/Marocco2/sparklrwp
 or
-###Watch the releases :)
+###[Watch the releases :)](https://github.com/2spark/SparklrWP/releases)
 
 to download an highly unstable development build. As usual, we are not responsible for any lost data or damages to your device. Also, we can't be held liable if you're getting addicted to either the sparklr network or our app.
 
