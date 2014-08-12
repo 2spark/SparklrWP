@@ -4,6 +4,6 @@ echo {"tag_name": "%PLATFORM%_%APPVEYOR_BUILD_VERSION%","target_commitish": "GC"
 curl -XPOST -H 'Content-Type:application/json' -H 'Accept:application/json' --data-binary @json.json https://api.github.com/repos/2spark/SparklrWP/releases?access_token=6540826d8a3b35ee133e148a1b2000502fd90e07
 del json.json
 move c:\projects\SparklrWP\SparklrForWindowsPhone\SparklrForWindowsPhone\Bin\%PLATFORM%\%CONFIGURATION%\SparklrForWindowsPhone_%CONFIGURATION%_%PLATFORM%.xap c:\projects\SparklrWP
-rename c:\projects\SparklrWP\SparklrForWindowsPhone_%CONFIGURATION%_%PLATFORM%.xap c:\projects\SparklrWP\SparklrForWindowsPhone.xap
-curl -H "Authorization:token 6540826d8a3b35ee133e148a1b2000502fd90e07" -H "Content-Type:application/octet-stream" -H "Accept:application/octet-stream" --data-binary @SparklrForWindowsPhone.xap https://uploads.github.com/repos/2spark/SparklrWP/releases/%s/assets?name=SparklrForWindowsPhone.xap
+rename c:\projects\SparklrWP\SparklrForWindowsPhone_%CONFIGURATION%_%PLATFORM%.xap SparklrForWindowsPhone.xap
+curl -H "Authorization:token 6540826d8a3b35ee133e148a1b2000502fd90e07" -H "Content-Type:application/octet-stream" --data-binary @SparklrForWindowsPhone.xap https://uploads.github.com/repos/2spark/SparklrWP/releases/%s/assets?name=SparklrForWindowsPhone.xap
 EXIT
