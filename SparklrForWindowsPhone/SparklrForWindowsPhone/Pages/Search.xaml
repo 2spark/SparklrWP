@@ -44,14 +44,14 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock x:Name="ApplicationTitle" Margin="24,17,0,0" Text="APP TITLE" Style="{StaticResource PhoneTextNormalStyle}"/>
+        <TextBlock x:Name="ApplicationTitle" Margin="24,17,0,0" Text="2spark" Style="{StaticResource PhoneTextNormalStyle}" FontFamily="/SparklrForWindowsPhone;component/Fonts/Fonts.zip#Courgette"/>
 
-        <Grid Grid.Row="1" Margin="24,28,0,0">
+        <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <telerikInput:RadAutoCompleteBox ActionButtonVisibility="Visible" EmptyFilterBehavior="ShowAll" Margin="-12,6,12,0" x:Name="radAutoComplete" AutoCompleteMode="Contains" SuggestionsSource="{Binding Items}" FilterKeyPath="Title" AutoCompletePopupDisplayMode="None" GotFocus="RadAutoComplete_GotFocus" LostFocus="RadAutoComplete_LostFocus" />
+            <telerikInput:RadAutoCompleteBox ActionButtonVisibility="Visible" EmptyFilterBehavior="ShowAll" x:Name="radAutoComplete" AutoCompleteMode="Contains" SuggestionsSource="{Binding Items}" FilterKeyPath="Title" AutoCompletePopupDisplayMode="None" GotFocus="RadAutoComplete_GotFocus" LostFocus="RadAutoComplete_LostFocus" />
             <telerikPrimitives:RadDataBoundListBox Margin="0,14,0,0" Grid.Row="1" ItemsSource="{Binding ElementName=radAutoComplete, Path=FilteredSuggestions}" ItemTemplate="{StaticResource DataBoundListBoxItemTemplate}"/>
 
         </Grid>

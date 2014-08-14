@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage 
-    x:Class="SparklrForWindowsPhone.Pages.ViewPost"
+    x:Class="SparklrForWindowsPhone.Pages.Chat"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -265,7 +265,6 @@
     <Grid x:Name="LayoutRoot" Background="White"  >
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
-            <RowDefinition Height="AUTO"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -275,17 +274,10 @@
         
         <Grid Grid.Row="2" Margin="0,6,0,0">
             <Grid>
-                <ListBox>
-                    <!--Content goes here-->
-                <TextBlock 
-                    Grid.Row="1" 
-                    Margin="24,39,0,0" 
-                    TextWrapping="Wrap" 
-                    FontSize="{StaticResource PhoneFontSizeMediumLarge}" 
-                    FontFamily="Segoe WP Light" 
-                    Text="{Binding Messages.Count, StringFormat=\{0\} comments}" Foreground="Black"/>
+                
+                <ListBox Grid.Row="0" HorizontalAlignment="Center">
                 <telerikData:RadConversationView 
-                    Grid.Row="2" 
+                    
                     ItemsSource="{Binding Messages}"
                     x:Name="conversationView"
                     MessageTemplateSelector="{StaticResource MessageItemTemplateSelector}"

@@ -24,7 +24,7 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
-            <RowDefinition Height="80" />
+            <RowDefinition Height="70" />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <!-- LOCALIZATION NOTE:
@@ -47,8 +47,12 @@
          -->
 
         <!--Pivot Control-->
-        <StackPanel  Background="#FF454050" Grid.Row="0">
+        <StackPanel  Background="#FF454050" Grid.Row="0" Orientation="Horizontal">
             <TextBlock FontSize="36" FontFamily="/SparklrForWindowsPhone;component/Fonts/Fonts.zip#Courgette" Margin="24,12,0,0" Foreground="White">2spark*</TextBlock>
+            <telerikPrimitives:ApplicationBarButton IconUri="/Assets/BadgeLogo.png" Width="60" Margin="30,0,0,0" Height="60" />
+            <telerikPrimitives:ApplicationBarButton IconUri="/Assets/BadgeLogo.png" Width="60" Margin="30,0,0,0" Height="60" />
+            <telerikPrimitives:ApplicationBarButton IconUri="/Assets/BadgeLogo.png" Width="60" Margin="30,0,0,0" Height="60" />
+            <telerikPrimitives:ApplicationBarButton IconUri="/Assets/BadgeLogo.png" Width="60" Margin="30,0,0,0" Height="60" />
         </StackPanel>
 
         <phone:Pivot Grid.Row="1" Background="White" ItemsSource="{Binding Items}" x:Name="MainPivot">
