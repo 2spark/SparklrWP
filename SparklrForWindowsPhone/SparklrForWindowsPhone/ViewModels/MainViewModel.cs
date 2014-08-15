@@ -13,7 +13,7 @@ namespace SparklrForWindowsPhone.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        public readonly string[] Networks = { "FOLLOWING", "POPULAR", "EVERYTHING", "MUSIC", "FUNNY", "TECH", "GAMING", "ART", "MISC" };
+        public readonly string[] Networks = { "following", "popular", "everything", "music", "funny", "tech", "gaming", "art", "misc" };
 
         public MainViewModel()
         {

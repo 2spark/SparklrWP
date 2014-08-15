@@ -11,7 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Data;
 
-namespace SparklrForWindowsPhone.Pages.Helpers
+namespace SparklrForWindowsPhone.Helpers
 {
     public class StringToUpperConverter : IValueConverter
     {
