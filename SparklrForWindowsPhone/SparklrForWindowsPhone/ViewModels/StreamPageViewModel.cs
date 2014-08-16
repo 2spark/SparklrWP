@@ -53,47 +53,36 @@ namespace SparklrForWindowsPhone.ViewModels
         }
 
         internal Stream stream = null;
-
-        internal static async Task<StreamPageViewModel> CreateInstanceAsync(string s)
-        {
-            StreamPageViewModel svm = new StreamPageViewModel(s);
-
-#if DEBUG
-            Stopwatch sw1 = new Stopwatch();
-            sw1.Start();
-#endif
-
-            svm.stream = await Housekeeper.ServiceConnection.GetStreamAsync(s);
-
-#if DEBUG
-            sw1.Stop();
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-#endif
-            
-            foreach(Post p in svm.stream.Posts)
-            {
-                svm.Posts.Add(new PostViewModel(p.Author, p.Content));
-            }
-
-#if DEBUG
-            sw.Stop();
-
-            Helpers.DebugHelper.LogDebugMessage("Loaded {0} posts from {1} in {2}ms. SparklrSharp took {3}ms", svm.Posts.Count, s, sw.ElapsedMilliseconds, sw1.ElapsedMilliseconds);
-#endif
-
-            return svm;
-        }
+        private bool currentlyWorking = false;
 
         internal async Task LoadMore()
         {
-            int previousCount = this.Posts.Count + 1;
-
-            await stream.LoadOlderPosts(Housekeeper.ServiceConnection);
-
-            for(int i = previousCount; i < stream.Posts.Count; i++)
+            if (!currentlyWorking)
             {
-                this.Posts.Add(new PostViewModel(stream.Posts[i].Author, stream.Posts[i].Content));
+                currentlyWorking = true;
+                GlobalLoadingIndicator.Start();
+
+                if (stream == null)
+                {
+                    stream = await Housekeeper.ServiceConnection.GetStreamAsync(this.Network);
+
+                    foreach (Post p in stream.Posts)
+                        this.Posts.Add(new PostViewModel(p.Author, p.Content));
+                }
+                else
+                {
+                    int previousCount = this.Posts.Count + 1;
+
+                    await stream.LoadOlderPosts(Housekeeper.ServiceConnection);
+
+                    for (int i = previousCount; i < stream.Posts.Count; i++)
+                    {
+                        this.Posts.Add(new PostViewModel(stream.Posts[i].Author, stream.Posts[i].Content));
+                    }
+                }
+
+                GlobalLoadingIndicator.Stop();
+                currentlyWorking = false;
             }
         }
     }

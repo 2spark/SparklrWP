@@ -40,15 +40,10 @@ namespace SparklrForWindowsPhone.ViewModels
         /// </summary>
         public async void LoadData()
         {
-            //TODO: Is this the right place to show the indicator? Maybe move to *Page.cs
-            GlobalLoadingIndicator.Start();
-
             foreach(string s in Networks)
             {
-                Items.Add(await StreamPageViewModel.CreateInstanceAsync(s));
+                Items.Add(new StreamPageViewModel(s));
             }
-
-            GlobalLoadingIndicator.Stop();
         }
 
         /// <summary>
@@ -57,11 +52,7 @@ namespace SparklrForWindowsPhone.ViewModels
         /// <param name="index">The index of the network where more posts should be loaded</param>
         internal async void LoadMore(int index)
         {
-            GlobalLoadingIndicator.Start();
-
             await this.Items[index].LoadMore();
-
-            GlobalLoadingIndicator.Stop();
         }
     }
 }

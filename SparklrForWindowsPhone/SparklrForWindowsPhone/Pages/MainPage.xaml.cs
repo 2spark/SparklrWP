@@ -78,6 +78,11 @@ namespace SparklrForWindowsPhone
             App.ViewModel.LoadMore(MainPivot.SelectedIndex);
         }
 
+        private void PivotChanged(object sender, SelectionChangedEventArgs e)
+        {
+            App.ViewModel.LoadMore(MainPivot.SelectedIndex);
+        }
+
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()
         //{
