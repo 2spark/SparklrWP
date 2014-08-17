@@ -7,8 +7,9 @@
         <vm:StreamPageViewModel Network="following">
             <vm:StreamPageViewModel.Posts>
                 <vm:PostViewModel Content="Test1" />
-                <vm:PostViewModel Content="Test2" />
-                <vm:PostViewModel Content="Test3" />
+                <vm:PostViewModel Content="Test a bit long 2" />
+                <vm:PostViewModel Content="Superultramegaiperawesomebeautifulbigtest3" />
+                <vm:PostViewModel Content="Superultramegaiperawesomebeautifulbigwithtextwrappingtest4" />
             </vm:StreamPageViewModel.Posts>
         </vm:StreamPageViewModel>
         <vm:StreamPageViewModel Network="everything" />
