@@ -77,10 +77,12 @@
             <TextBlock FontSize="36" FontFamily="/SparklrForWindowsPhone;component/Fonts/Fonts.zip#Courgette" Margin="24,12,0,0" Foreground="White">
 				<Run Text="2spark*"/>
             </TextBlock>
-            <telerikPrimitives:ApplicationBarButton IconUri="/Assets/BadgeLogo.png" Width="60" Margin="30,0,0,0" Height="60" />
-            <telerikPrimitives:ApplicationBarButton IconUri="/Assets/BadgeLogo.png" Width="60" Margin="30,0,0,0" Height="60" />
-            <telerikPrimitives:ApplicationBarButton IconUri="/Assets/BadgeLogo.png" Width="60" Margin="30,0,0,0" Height="60" />
-            <telerikPrimitives:ApplicationBarButton IconUri="/Assets/BadgeLogo.png" Width="60" Margin="30,0,0,0" Height="60" />
+            <StackPanel Orientation="Horizontal" >
+            <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="UniformToFill" />
+            <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" />
+            <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" />
+            <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" />
+            </StackPanel>
         </StackPanel>
 
         <phone:Pivot Grid.Row="1" Background="White" ItemsSource="{Binding Items}" x:Name="MainPivot" SelectionChanged="PivotChanged">
