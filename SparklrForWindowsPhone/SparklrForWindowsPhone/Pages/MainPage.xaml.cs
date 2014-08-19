@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Diagnostics;
 using SparklrSharp;
 using SparklrForWindowsPhone.ViewModels;
+using Telerik.Windows.Controls;
+using Windows.UI.Core;
 
 namespace SparklrForWindowsPhone
 {
@@ -65,7 +67,8 @@ namespace SparklrForWindowsPhone
 
         private void NewPost_Click(object sender, System.EventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Pages/Post.xaml", UriKind.Relative));
+            RadInputPrompt.Show("New Post");
+            //NavigationService.Navigate(new Uri("/Pages/Post.xaml", UriKind.Relative));
         }
 
         private void ApplicationBarMenuItem_Click(object sender, EventArgs e)
@@ -81,6 +84,29 @@ namespace SparklrForWindowsPhone
         private void PivotChanged(object sender, SelectionChangedEventArgs e)
         {
             App.ViewModel.LoadMore(MainPivot.SelectedIndex);
+        }
+
+        public static void Show(
+    ControlTemplate template,
+    object title,
+    IEnumerable<object> buttonsContent,
+    object message = null,
+    InputMode inputMode = InputMode.Text,
+    Style inputStyle = null,
+    object checkBoxContent = null,
+    bool isCheckBoxChecked = false,
+    bool vibrate = false,
+    HorizontalAlignment horizontalAlignment = HorizontalAlignment.Stretch,
+    VerticalAlignment verticalAlignment = VerticalAlignment.Top,
+    Action<InputPromptClosedEventArgs> closedHandler = null,
+    Action<KeyEventArgs> keyDownHandler = null)
+        {
+            //New post code goes here
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Pages/Search.xaml", UriKind.Relative));
         }
 
         // Sample code for building a localized ApplicationBar

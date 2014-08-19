@@ -42,8 +42,8 @@
                 <shell:ApplicationBarMenuItem Text="About..." Click="ApplicationBarMenuItem_Click"/>
             </shell:ApplicationBar.MenuItems>
             <shell:ApplicationBarIconButton Text="Friends" IconUri="/Assets/AppBar/appbar.people.png"/>
-            <!--<shell:ApplicationBarIconButton Text="New post" IconUri="/Assets/AppBar/add.png" Click="NewPost_Click"/>-->
-            <shell:ApplicationBarIconButton Text="search" IconUri="/Assets/AppBar/feature.search.png" />
+            <shell:ApplicationBarIconButton Text="New post" IconUri="/Assets/AppBar/add.png" Click="NewPost_Click"/>
+            <shell:ApplicationBarIconButton Text="search" IconUri="/Assets/AppBar/feature.search.png" Click="Search_Click" />
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 
@@ -77,12 +77,13 @@
             <TextBlock FontSize="36" FontFamily="/SparklrForWindowsPhone;component/Fonts/Fonts.zip#Courgette" Margin="24,12,0,0" Foreground="White">
 				<Run Text="2spark*"/>
             </TextBlock>
-            <StackPanel Orientation="Horizontal" >
-            <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="UniformToFill" />
-            <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" />
-            <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" />
-            <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" />
-            </StackPanel>
+            <!--More Buttons here-->
+            <!--<StackPanel Orientation="Horizontal" >
+            <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" Foreground="White" BorderThickness="0" />
+            <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" Foreground="White" />
+            <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" Foreground="White" />
+            <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" Foreground="White" />
+            </StackPanel>-->
         </StackPanel>
 
         <phone:Pivot Grid.Row="1" Background="White" ItemsSource="{Binding Items}" x:Name="MainPivot" SelectionChanged="PivotChanged">

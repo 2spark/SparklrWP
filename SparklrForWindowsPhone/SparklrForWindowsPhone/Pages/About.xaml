@@ -15,7 +15,7 @@
     shell:SystemTray.IsVisible="True">
 
     <Grid x:Name="LayoutRoot" Background="#FF454050">
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -32,9 +32,10 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition />
+                <RowDefinition Height="18*" />
+                <RowDefinition Height="203*"/>
             </Grid.RowDefinitions>
-            
+
             <StackPanel>
                 <TextBlock 
                     Text="2spark for WP" 
@@ -45,7 +46,7 @@
                     Margin="12,0,12,0" 
                     FontSize="{StaticResource PhoneFontSizeNormal}"/>
             </StackPanel>
-            
+
             <TextBlock 
                 Grid.Row="1" 
                 Text="Third parties' client for sparklr* social network."
@@ -53,6 +54,7 @@
                 TextWrapping="Wrap" 
                 Foreground="{StaticResource PhoneSubtleBrush}" 
                 FontSize="{StaticResource PhoneFontSizeNormal}" />
+            <TextBlock Grid.Row="4" Text="Icon pack by iconmoon.io" Margin="12,16,0,-12" />
             <HyperlinkButton 
                 Grid.Row="2" 
                 Content="technical support/feedback email" 
@@ -69,7 +71,7 @@
                 Foreground="{StaticResource PhoneAccentBrush}" 
                 FontSize="{StaticResource PhoneFontSizeNormal}" 
                 Command="{Binding RateThisAppCommand}"/>
-            <StackPanel Grid.Row="4" Margin="12,0,12,50" VerticalAlignment="Bottom">
+            <StackPanel Grid.Row="5" Margin="12,0,12,50" VerticalAlignment="Bottom">
                 <TextBlock 
                     Text="Copyright" 
                     Margin="0,12,0,0" 
@@ -80,5 +82,5 @@
             </StackPanel>
         </Grid>
     </Grid>
-    
+
 </phone:PhoneApplicationPage>

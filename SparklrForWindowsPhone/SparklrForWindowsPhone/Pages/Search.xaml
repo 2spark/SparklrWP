@@ -51,8 +51,8 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <telerikInput:RadAutoCompleteBox ActionButtonVisibility="Visible" EmptyFilterBehavior="ShowAll" x:Name="radAutoComplete" AutoCompleteMode="Contains" SuggestionsSource="{Binding Items}" FilterKeyPath="Title" AutoCompletePopupDisplayMode="None" GotFocus="RadAutoComplete_GotFocus" LostFocus="RadAutoComplete_LostFocus" />
-            <telerikPrimitives:RadDataBoundListBox Margin="0,14,0,0" Grid.Row="1" ItemsSource="{Binding ElementName=radAutoComplete, Path=FilteredSuggestions}" ItemTemplate="{StaticResource DataBoundListBoxItemTemplate}"/>
+            <telerikInput:RadAutoCompleteBox ActionButtonVisibility="Visible" EmptyFilterBehavior="ShowAll" x:Name="radAutoComplete" AutoCompleteMode="Contains" SuggestionsSource="{Binding Items}" FilterKeyPath="Title" AutoCompletePopupDisplayMode="None" GotFocus="RadAutoComplete_GotFocus" LostFocus="RadAutoComplete_LostFocus" Margin="12,0" />
+            <telerikPrimitives:RadDataBoundListBox Margin="30,14,30,0" Grid.Row="1" ItemsSource="{Binding ElementName=radAutoComplete, Path=FilteredSuggestions}" ItemTemplate="{StaticResource DataBoundListBoxItemTemplate}"/>
 
         </Grid>
     </Grid>
