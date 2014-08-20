@@ -9,7 +9,6 @@
     xmlns:telerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:viewModels="clr-namespace:SparklrForWindowsPhone.ViewModels" 
-    d:DataContext="{d:DesignData SampleData/MainDataViewModelSampleData.xaml}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -17,9 +16,9 @@
     mc:Ignorable="d" d:DesignHeight="728" d:DesignWidth="480"
     shell:SystemTray.IsVisible="False">
 
-    <UserControl.DataContext>
+    <!--<UserControl.DataContext>
         <viewModels:MainDataViewModel />
-    </UserControl.DataContext>
+    </UserControl.DataContext>-->
 
     <Grid x:Name="LayoutRoot" Background="Transparent">
         

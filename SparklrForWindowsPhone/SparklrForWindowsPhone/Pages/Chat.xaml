@@ -19,7 +19,7 @@
     mc:Ignorable="d" d:DesignHeight="728" d:DesignWidth="480"
     shell:SystemTray.IsVisible="False" Background="#FF454050">
 
-    <UserControl.DataContext>
+    <!--<UserControl.DataContext>
         <viewModels:MessagesViewModel/>
     </UserControl.DataContext>
 
@@ -290,7 +290,7 @@
             </Grid>
         </Grid>
     </Grid>
-
+-->
     <!--<phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" BackgroundColor="#FF454050" >
             <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>

@@ -113,9 +113,6 @@
     </Compile>
     <Compile Include="Commands\RateThisAppCommand.cs" />
     <Compile Include="Commands\SendAnEmailCommand.cs" />
-    <Compile Include="Helpers\IdToPictureConverter.cs" />
-    <Compile Include="Helpers\MessageGroupTemplateSelector.cs" />
-    <Compile Include="Helpers\MessageItemTemplateSelector.cs" />
     <Compile Include="Pages\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -131,10 +128,7 @@
     <Compile Include="Pages\Chat.xaml.cs">
       <DependentUpon>Chat.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\DataItemViewModel.cs" />
-    <Compile Include="ViewModels\MainDataViewModel.cs" />
     <Compile Include="ViewModels\CommandSampleViewModel.cs" />
-    <Compile Include="ViewModels\MessagesViewModel.cs" />
     <Compile Include="Pages\ViewPost.xaml.cs">
       <DependentUpon>ViewPost.xaml</DependentUpon>
     </Compile>
@@ -182,9 +176,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="SampleData\MainDataViewModelSampleData.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="SampleData\PostViewModelSampleData.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\Search.xaml">
       <SubType>Designer</SubType>

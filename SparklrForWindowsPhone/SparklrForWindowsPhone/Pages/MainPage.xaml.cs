@@ -153,8 +153,8 @@ namespace SparklrForWindowsPhone
 
                 if(pvm != null)
                 {
+                    SparklrForWindowsPhone.Pages.ViewPost.selectedPost = pvm;
                     NavigationService.Navigate(new Uri("/Pages/ViewPost.xaml", UriKind.Relative));
-                    // TODO: Pass selected post to page
                 }
 #if DEBUG
                 else
