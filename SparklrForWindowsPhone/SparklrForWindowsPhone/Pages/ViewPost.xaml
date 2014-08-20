@@ -63,13 +63,24 @@
                             <Image Source="/Assets/Heart.png" Width="40" Height="40" />
                         </Border>
                         <Border Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" Background="#FF5D4C68" Margin="5" Width="60" Height="60">
-                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="notesText" Text="9999" FontSize="25" FontWeight="Light" MaxWidth="60" Foreground="White" />
+                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="notesText" Text="{Binding Post.CommentCount, FallbackValue=0}" FontSize="25" FontWeight="Light" MaxWidth="60" Foreground="White" />
                         </Border>
                         <StackPanel Grid.Row="2" Grid.ColumnSpan="4" Orientation="Vertical">
-                            <TextBlock Foreground="Black" Margin="0,5,5,5" Text="{Binding Content}" TextWrapping="Wrap" FontSize="24" />
+                            <TextBlock Foreground="Black" Margin="0,5,5,5" Text="{Binding Post.Content}" TextWrapping="Wrap" FontSize="24" />
                             <Image MaxHeight="700" MaxWidth="432" Stretch="None" />
                         </StackPanel>
                     </Grid>
+                    
+                    <telerikData:RadConversationView ItemsSource="{Binding Comments}" TextBoxVisibility="Collapsed" IsHitTestVisible="False" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                    </telerikData:RadConversationView>
+                    
+                    <telerikPrimitives:RadTextBox ActionButtonVisibility="Visible" Watermark="add comment..." ClearButtonVisibility="Collapsed" AcceptsReturn="True">
+                        <telerikPrimitives:RadTextBox.ActionButtonStyle>
+                            <Style TargetType="telerikPrimitives:RadImageButton">
+                                <Setter Property="RestStateImageSource" Value="/Assets/Comment.png" /> <!-- TODO: add actual image -->
+                            </Style>
+                        </telerikPrimitives:RadTextBox.ActionButtonStyle>
+                    </telerikPrimitives:RadTextBox>
                 </ListBox>
             </Grid>
         </Grid>

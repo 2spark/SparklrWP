@@ -1,9 +1,12 @@
-﻿using SparklrSharp.Sparklr;
+﻿using SparklrForWindowsPhone.Helpers;
+using SparklrSharp.Sparklr;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Telerik.Windows.Controls;
 
 namespace SparklrForWindowsPhone.ViewModels
 {
@@ -26,18 +29,37 @@ namespace SparklrForWindowsPhone.ViewModels
             }
         }
 
-        private string content;
-        public String Content
+        private Post post;
+        public Post Post
         {
             get
             {
-                return content;
+                return post;
             }
             set
             {
-                if(content != value)
+                if(post != value)
                 {
-                    content = value;
+                    post = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private bool commentsLoaded = false;
+
+        private ObservableCollection<ConversationViewMessage> comments = new ObservableCollection<ConversationViewMessage>();
+        public ObservableCollection<ConversationViewMessage> Comments
+        {
+            get
+            {
+                return comments;
+            }
+            set
+            {
+                if(comments != value)
+                {
+                    comments = value;
                     NotifyPropertyChanged();
                 }
             }
@@ -46,10 +68,31 @@ namespace SparklrForWindowsPhone.ViewModels
         public PostViewModel()
         { }
 
-        public PostViewModel(SparklrSharp.Sparklr.User user, string content)
+        public PostViewModel(User user, Post post)
         {
             User = user;
-            Content = content;
+            Post = post;
+        }
+
+        public async void LoadComments()
+        {
+            if(!commentsLoaded)
+            {
+                Helpers.GlobalLoadingIndicator.Start();
+
+                List<Comment> comments = new List<Comment>(await Post.GetCommentsAsync(Housekeeper.ServiceConnection));
+
+                if(comments.Count > 0)
+                {
+                    for(int i = 0; i < comments.Count; i++)
+                    {
+                        Comments.Add(new ConversationViewMessage(comments[i].Message, new DateTime(1999, 1, 1), comments[i].Author == Housekeeper.ServiceConnection.CurrentUser ? ConversationViewMessageType.Outgoing : ConversationViewMessageType.Incoming));
+                    }
+                }
+
+                Helpers.GlobalLoadingIndicator.Stop();
+                commentsLoaded = true;
+            }
         }
 
     }

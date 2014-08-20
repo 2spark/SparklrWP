@@ -67,7 +67,7 @@ namespace SparklrForWindowsPhone.ViewModels
                     stream = await Housekeeper.ServiceConnection.GetStreamAsync(this.Network);
 
                     foreach (Post p in stream.Posts)
-                        this.Posts.Add(new PostViewModel(p.Author, p.Content));
+                        this.Posts.Add(new PostViewModel(p.Author, p));
                 }
                 else
                 {
@@ -77,7 +77,7 @@ namespace SparklrForWindowsPhone.ViewModels
 
                     for (int i = previousCount; i < stream.Posts.Count; i++)
                     {
-                        this.Posts.Add(new PostViewModel(stream.Posts[i].Author, stream.Posts[i].Content));
+                        this.Posts.Add(new PostViewModel(stream.Posts[i].Author, stream.Posts[i]));
                     }
                 }
 
@@ -106,7 +106,7 @@ namespace SparklrForWindowsPhone.ViewModels
 
                         for(int i = numberOfNewPosts - 1; i  >= 0; i--)
                         {
-                            PostViewModel pvm = new PostViewModel(stream.Posts[i].Author, stream.Posts[i].Content);
+                            PostViewModel pvm = new PostViewModel(stream.Posts[i].Author, stream.Posts[i]);
                             Posts.Insert(0, pvm);
                         }
                     }

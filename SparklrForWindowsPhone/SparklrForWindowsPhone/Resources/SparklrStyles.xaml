@@ -3,7 +3,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     >
-    
+
     <Color x:Key="SparklrBackgroundColor">#FF454050</Color>
     <SolidColorBrush x:Key="SparklrBackgroundBrush" Color="{StaticResource SparklrBackgroundColor}" />
 
@@ -17,7 +17,7 @@
     <Style x:Name="SparklrTextNormalStyle" BasedOn="{StaticResource PhoneTextNormalStyle}" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="/SparklrWP;component/Fonts/Fonts.zip#Courgette" />
     </Style>
-    
+
     <Style x:Name="ListBoxItemStackpanelStyle" TargetType="StackPanel">
         <!-- usually the left margin is 12 for phone controls -->
         <Setter Property="Margin" Value="12,5,0,0" />
@@ -60,6 +60,4 @@
         <Setter Property="Width" Value="150" />
         <Setter Property="Height" Value="150" />
     </Style>
-
-    
 </ResourceDictionary>

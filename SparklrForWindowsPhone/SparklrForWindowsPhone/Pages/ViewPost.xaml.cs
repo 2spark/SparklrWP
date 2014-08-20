@@ -24,6 +24,7 @@ namespace SparklrForWindowsPhone.Pages
 
         public ViewPost()
         {
+            selectedPost.LoadComments();
             InitializeComponent();
             DataContext = selectedPost;
         }
