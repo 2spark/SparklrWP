@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<grammar version="1.0" xml:lang="en-US" tag-format="semantics/1.0" 
+         xmlns="http://www.w3.org/2001/06/grammar" 
+         xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions">
+
+  <!--Esempio di grammatica SRGS per mostrare la sintassi.
+      L'elemento regola definisce una regola di grammatica. Un elemento regola 
+      contiene testo o elementi XML che definiscono cosa può dire chi 
+      parla e l'ordine utilizzabile per le parole.-->
+
+  <rule id="networks">
+    <one-of>
+      <item> Following </item>
+      <item> Popular </item>
+      <item> Everything </item>
+      <item> Music </item>
+      <item> Tech </item>
+      <item> Gaming </item>
+      <item> Art </item>
+      <item> Misc </item>
+    </one-of>
+  </rule>
+    <!--Utilizzare l'elemento item per un'espansione alla regola quando è necessario che quest'ultima sia
+        opzionale o ripetibile (in altre parole, nei casi in cui occorre utilizzare l'attributo di ripetizione).
+        L'attributo di ripetizione sull'elemento item indica che le parole nell'elemento specifico possono essere
+        espresse una o zero volte, rendendole opzionali-->
+    <!--L'elemento ruleref specifica un riferimento da parte della regola contenente a un'altra regola, 
+        nella stessa grammatica o in una grammatica 	esterna. La regola a cui viene fatto riferimento definisce l'input dell'utente che deve 
+        trovare corrispondenza per un riconoscimento corretto della regola che la contiene. Questo elemento è particolarmente utile per
+        riutilizzare le regole e le grammatiche con contenuti che non cambiano frequentemente come un elenco 
+        di città o una regola per riconoscere i numeri di telefono.-->
+   
+</grammar>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.1">
+  <CommandSet xml:lang="en-US">
+    <CommandPrefix>2spark</CommandPrefix>
+    <Example> WTF is doing America? </Example>
+
+  <!--<PhraseTopic Label="dateTopic" Scenario="Form Filling"> 
+            <Subject> Data/Ora </Subject> 
+            <Subject> MyCustomSubject </Subject> 
+        </PhraseTopic>-->
+  </CommandSet>
+</VoiceCommands>
+
+<!-- Per applicazioni destinate a Windows Phone 8.1 -->
+<!--
+    1. Modificare la versione in 1.1
+        <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.1">
+
+    2. Aggiungere la sezione PhraseTopic
+        <PhraseTopic Label="dateTopic" Scenario="Form Filling"> 
+            <Subject> Data/Ora </Subject> 
+            <Subject> MyCustomSubject </Subject> 
+        </PhraseTopic>
+-->
+
+<!-- Esempio -->
+<!--
+
+    L'esempio precedente dimostra un gioco ipotetico chiamato "Contoso ROD3O!" che definisce due
+    comandi che un utente può pronunciare per avviare una nuova partita o per ripetere uno dei tre livelli previsti.  
+    Per avviare il comando PlayGame, l'utente può dire "Contoso Rodeo play a new game" o "Contoso Rodeo
+    play new game". Entrambe le frasi avvieranno una nuova partita. Per avviare il secondo comando, l'utente può dire
+    "Contoso Rodeo replay level one", "Contoso Rodeo replay level two" o "Contoso Rodeo replay level 
+    three".
+    Il secondo comando dimostra come utilizzare una PhraseList con un comando. Le PhraseList possono essere aggiornate 
+    in modo dinamico dall'applicazione (ad es. se un utente sblocca un nuovo livello o una partita o una funzione, è possibile 
+    consentire all'utente di impartire comandi per le nuove funzioni in base ai nuovi comandi già registrati.)
+    Il terzo comando dimostra come la sequenza {*} possa associarsi a un altro comando per riconoscere il linguaggio
+    non definito nel CommandSet.
+
+  Nota:
+
+      [e] Indica che "e" è opzionale. La connessione delle parole in questo modo
+            può aiutare a conferire un tono naturale sia a "Contoso Rodeo, play new game" sia a "open Contoso Rodeo and play
+            a new game".
+                 
+      {numero} Definito separatamente dal comando, mappa su "uno" o "due" o "tre".
+
+-->
