@@ -29,7 +29,7 @@
         <StackPanel  Background="#FF454050"  >
             <TextBlock FontSize="36" FontFamily="/SparklrForWindowsPhone;component/Fonts/Fonts.zip#Courgette" Foreground="{StaticResource PhoneForegroundBrush}" Margin="25,12,0,0">2spark*</TextBlock>
         </StackPanel>
-        
+
         <!-- TODO: Are the margins correct here? Check and remove this comment ;) -->
         <Grid Grid.Row="2" Margin="0,6,0,0">
             <Grid>
@@ -39,7 +39,7 @@
                             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                         </Style>
                     </ListBox.ItemContainerStyle>
-                    
+
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
