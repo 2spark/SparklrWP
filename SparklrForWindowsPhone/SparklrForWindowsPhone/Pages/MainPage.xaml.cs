@@ -96,6 +96,25 @@ namespace SparklrForWindowsPhone
             App.ViewModel.LoadMore(MainPivot.SelectedIndex);
         }
 
+        private async void RadDataBoundListBox_RefreshRequested(object sender, EventArgs e)
+        {
+            await App.ViewModel.LoadNewer(MainPivot.SelectedIndex);
+
+            RadDataBoundListBox rdblb = sender as RadDataBoundListBox;
+
+            if(rdblb != null)
+            {
+                rdblb.StopPullToRefreshLoading(true);
+            }
+#if DEBUG
+            else
+            {
+                if (Debugger.IsAttached)
+                    Debugger.Break(); // The sender was not a RadDataBoundListBox. This should not happen
+            }
+#endif
+        }
+
         private void PivotChanged(object sender, SelectionChangedEventArgs e)
         {
             App.ViewModel.LoadMore(MainPivot.SelectedIndex);

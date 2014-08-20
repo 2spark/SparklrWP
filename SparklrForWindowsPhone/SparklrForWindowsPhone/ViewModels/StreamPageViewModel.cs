@@ -85,5 +85,42 @@ namespace SparklrForWindowsPhone.ViewModels
                 currentlyWorking = false;
             }
         }
+
+        internal async Task LoadNewer()
+        {
+            if (!currentlyWorking)
+            {
+                currentlyWorking = true;
+                GlobalLoadingIndicator.Start();
+
+                if (stream != null)
+                {
+                    int oldLength = stream.Posts.Count;
+                    bool result = await stream.LoadNewerPosts(Housekeeper.ServiceConnection);
+
+                    if(result)
+                    {
+                        int newLength = stream.Posts.Count;
+
+                        int numberOfNewPosts = newLength - oldLength;
+
+                        for(int i = numberOfNewPosts - 1; i  >= 0; i--)
+                        {
+                            PostViewModel pvm = new PostViewModel(stream.Posts[i].Author, stream.Posts[i].Content);
+                            Posts.Insert(0, pvm);
+                        }
+                    }
+                }
+#if DEBUG
+                else
+                {
+                    System.Diagnostics.Debugger.Break();
+                }
+#endif
+
+                GlobalLoadingIndicator.Stop();
+                currentlyWorking = false;
+            }
+        }
     }
 }

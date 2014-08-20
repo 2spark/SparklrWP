@@ -54,5 +54,10 @@ namespace SparklrForWindowsPhone.ViewModels
         {
             await this.Items[index].LoadMore();
         }
+
+        internal async Task LoadNewer(int index)
+        {
+            await this.Items[index].LoadNewer();
+        }
     }
 }
