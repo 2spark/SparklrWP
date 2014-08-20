@@ -38,7 +38,7 @@ namespace SparklrForWindowsPhone.ViewModels
         /// <summary>
         /// Performs an initial load of the stram data
         /// </summary>
-        public async void LoadData()
+        public void LoadData()
         {
             foreach(string s in Networks)
             {

@@ -136,6 +136,12 @@ namespace SparklrForWindowsPhone.Pages
             }
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (!NavigationService.CanGoBack && e.NavigationMode == NavigationMode.Back)
+                App.Current.Terminate();
+        }
+
 #if DEBUG
         private void LoadToast()
         {

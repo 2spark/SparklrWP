@@ -7,8 +7,12 @@
 
     <!--Application Resources-->
     <Application.Resources>
-        <local:LocalizedStrings xmlns:local="clr-namespace:SparklrForWindowsPhone" x:Key="LocalizedStrings"/>
-        <!--<ResourceDictionary Source="/Resources/SparklrStyles.xaml"/>-->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/SparklrStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <local:LocalizedStrings xmlns:local="clr-namespace:SparklrForWindowsPhone" x:Key="LocalizedStrings"/>
+        </ResourceDictionary>
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

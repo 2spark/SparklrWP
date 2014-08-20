@@ -109,6 +109,36 @@ namespace SparklrForWindowsPhone
             NavigationService.Navigate(new Uri("/Pages/Search.xaml", UriKind.Relative));
         }
 
+        private void PostGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            ListBoxItem control = sender as ListBoxItem;
+
+            if(control != null)
+            {
+                PostViewModel pvm = control.DataContext as PostViewModel;
+
+                if(pvm != null)
+                {
+                    NavigationService.Navigate(new Uri("/Pages/ViewPost.xaml", UriKind.Relative));
+                    // TODO: Pass selected post to page
+                }
+#if DEBUG
+                else
+                {
+                    if (Debugger.IsAttached)
+                        Debugger.Break(); // The DataContext was not a PostViewModel Should not happen
+                }
+#endif
+            }
+#if DEBUG
+            else
+            {
+                if (Debugger.IsAttached)
+                    Debugger.Break(); // The sender was not a ListBoxItem. This should not happen
+            }
+#endif
+        }
+
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()
         //{

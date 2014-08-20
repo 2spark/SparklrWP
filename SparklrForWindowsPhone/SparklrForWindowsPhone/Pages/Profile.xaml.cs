@@ -21,7 +21,7 @@ namespace SparklrForWindowsPhone.Pages
             InitializeComponent();
         }
 
-        private void Option1_Tap(object sender, GestureEventArgs e)
+        private void Option1_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             this.Option1Viewer.Visibility = System.Windows.Visibility.Visible;
             this.Option1Arrow.Visibility = System.Windows.Visibility.Visible;
@@ -29,7 +29,7 @@ namespace SparklrForWindowsPhone.Pages
             this.Option2Arrow.Visibility = System.Windows.Visibility.Collapsed;
         }
 
-        private void Option2_Tap(object sender, GestureEventArgs e)
+        private void Option2_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             this.Option1Viewer.Visibility = System.Windows.Visibility.Collapsed;
             this.Option1Arrow.Visibility = System.Windows.Visibility.Collapsed;
