@@ -113,9 +113,12 @@
                                             <ColumnDefinition Width="Auto"/>
                                         
                                         </Grid.ColumnDefinitions>
-                                    
-                                        <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="0,5,5,5" x:Name="imageProfile" Height="60" Width="60" Source="/Assets/Small.png"/>
-                                        <TextBlock Grid.Row="0" Grid.Column="1" x:Name="textName" HorizontalAlignment="Left" Margin="10,0" Text="{Binding User.Handle}" VerticalAlignment="Bottom" Foreground="Gray" />
+                                        <Ellipse x:Name="imageProfile" Height="60" Width="60" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="0">
+                                            <Ellipse.Fill>
+                                                <ImageBrush Stretch="Fill" ImageSource="/Assets/Small.png"/>
+                                            </Ellipse.Fill>
+                                        </Ellipse>
+                                            <TextBlock Grid.Row="0" Grid.Column="1" x:Name="textName" HorizontalAlignment="Left" Margin="10,0" Text="{Binding User.Handle}" VerticalAlignment="Bottom" Foreground="Gray" />
                                         <Border Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Background="#FF5D4C68" Margin="5" Width="60" Height="60">
                                             <Image Source="/Assets/Heart.png" Width="40" Height="40" />
                                         </Border>

@@ -90,7 +90,12 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Image Source="Images/FrameThumbnail.png" Margin="24,0,0,7" Width="111" Height="111"/>
+            <Ellipse x:Name="imageProfile" Margin="24,0,0,7" Width="111" Height="111">
+                <Ellipse.Fill>
+                    <ImageBrush Stretch="Fill" ImageSource="Images/FrameThumbnail.png"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            
             <StackPanel Grid.Column="1" Margin="12,-9,0,0">
                 <TextBlock TextWrapping="Wrap" FontFamily="Segoe WP SemiLight" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Foreground="{StaticResource PhoneForegroundBrush}" Text="Title"/>
                 <TextBlock Margin="0,4,0,0" TextWrapping="Wrap" FontFamily="Segoe WP SemiLight" FontSize="{StaticResource PhoneFontSizeNormal}" Foreground="{StaticResource PhoneForegroundBrush}" Text="Information" />
