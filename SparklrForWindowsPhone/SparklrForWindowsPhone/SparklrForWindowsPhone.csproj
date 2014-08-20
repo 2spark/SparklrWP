@@ -256,6 +256,8 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Cortana\SRGSGrammar.xml" />
+    <Content Include="Cortana\VoiceCommandDefinition.xml" />
     <Content Include="Pages\Images\CompanyLogo.png" />
     <Content Include="Pages\Images\Frame.png" />
     <Content Include="Pages\Images\FrameThumbnail.png" />
