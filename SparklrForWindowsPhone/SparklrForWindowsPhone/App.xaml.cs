@@ -8,6 +8,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using SparklrForWindowsPhone.Resources;
 using SparklrForWindowsPhone.ViewModels;
+using Telerik.Windows.Controls;
 
 namespace SparklrForWindowsPhone
 {
@@ -150,7 +151,7 @@ namespace SparklrForWindowsPhone
             // Create the frame but don't set it as RootVisual yet; this allows the splash
             // screen to remain active until the application is ready to render.
             //RootFrame = new PhoneApplicationFrame();
-            RootFrame = new TransitionFrame();
+            RootFrame = new RadPhoneApplicationFrame();
             RootFrame.Navigated += CompleteInitializePhoneApplication;
 
             // Handle navigation failures

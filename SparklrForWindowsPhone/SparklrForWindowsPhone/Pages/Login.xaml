@@ -12,7 +12,7 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True" BackKeyPress="OnBackKey" Loaded="Loaded"
-    Style="{StaticResource TransitionPageStyle}">
+    >
 
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar Opacity="0.765">

@@ -65,10 +65,25 @@ namespace SparklrForWindowsPhone
             Helpers.GlobalLoadingIndicator.Stop();
         }
 
-        private void NewPost_Click(object sender, System.EventArgs e)
+        private async void NewPost_Click(object sender, System.EventArgs e)
         {
-            RadInputPrompt.Show("New Post");
-            //NavigationService.Navigate(new Uri("/Pages/Post.xaml", UriKind.Relative));
+            InputPromptClosedEventArgs result = await RadInputPrompt.ShowAsync("New Post");
+            
+            if(result.Result == DialogResult.OK && !String.IsNullOrWhiteSpace(result.Text))
+            {
+#if DEBUG
+                Helpers.DebugHelper.LogDebugMessage("Sending post: {0}", result.Text);
+#endif
+                Helpers.GlobalLoadingIndicator.Start();
+                bool success = await Housekeeper.ServiceConnection.SubmitPostAsync(result.Text);
+                //TODO: Check if post exceeds maximum char limit
+                Helpers.GlobalLoadingIndicator.Stop();
+
+                if(!success)
+                {
+                    MessageBox.Show("We were unable to submit your post. Please try again later.", "Sorry :(", MessageBoxButton.OK);
+                }
+            }
         }
 
         private void ApplicationBarMenuItem_Click(object sender, EventArgs e)
