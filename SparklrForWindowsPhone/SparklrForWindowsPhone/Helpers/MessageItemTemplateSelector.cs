@@ -36,11 +36,6 @@ namespace SparklrForWindowsPhone.Helpers
 
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
-            RadDataBoundListBoxItem listBoxItem = container as RadDataBoundListBoxItem;
-            if (listBoxItem.AssociatedDataItem.Previous is Telerik.Windows.Data.IDataSourceGroup)
-            {
-                return this.EmptyDataItemTemplate;
-            }
             CustomMessage message = item as CustomMessage;
             if (message.Type == ConversationViewMessageType.Incoming)
             {

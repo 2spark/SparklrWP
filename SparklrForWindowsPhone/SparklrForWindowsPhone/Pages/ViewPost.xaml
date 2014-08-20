@@ -327,7 +327,7 @@
                      
                     GroupHeaderTemplateSelector="{StaticResource MessageGroupTemplateSelector}" 
                     TextBoxTemplate="{StaticResource TextBoxTemplate}"
-                    SendingMessage="OnSendingMessage">
+                    SendingMessage="OnSendingMessage" IsPullToRefreshEnabled="True">
                 </telerikData:RadConversationView>
                 </ListBox>
             </Grid>
