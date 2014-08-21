@@ -234,6 +234,7 @@
     <Content Include="Assets\Heart.png" />
     <Content Include="Assets\iconic.png" />
     <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\redo.png" />
     <Content Include="Assets\Small.png" />
     <Content Include="Assets\smalliconic.png" />
     <Content Include="Assets\SplashScreen.png" />
