@@ -20,7 +20,7 @@ namespace SparklrForWindowsPhone.Pages
     public partial class Login : PhoneApplicationPage
     {
         Housekeeper houseKeeper = new Housekeeper();
-
+        private bool IsBrowserOpen { get; set; }
         /// <summary>
         /// Creates a new instance of the Login-Page
         /// </summary>
@@ -33,9 +33,18 @@ namespace SparklrForWindowsPhone.Pages
 
         private void OnBackKey(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            // Kills the app
-            App.Current.Terminate();
-
+            //Handles the "sign up browser"
+            if (IsBrowserOpen == true)
+            {
+                e.Cancel = true;
+                CloseBrowserAnimation1.Begin();
+                IsBrowserOpen = false;
+            }
+            else
+            {
+                // Kills the app
+                App.Current.Terminate();
+            }
             //TODO: Handle the back button once the user is logged in 
         }
 
@@ -136,8 +145,23 @@ namespace SparklrForWindowsPhone.Pages
             }
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
+            if (houseKeeper.LoginDataAvailable == true)
+            {
+                houseKeeper.GetCreds();
+                SparklrForWindowsPhone.Helpers.GlobalLoadingIndicator.Start();
+                if (await Housekeeper.ServiceConnection.SigninAsync(houseKeeper.SparklrUsername, houseKeeper.SparklrPassword))
+                {
+                    DebugHelper.LogDebugMessage("User is logged in");
+                    //The information about the currently logged in user will be retreived in the background. It will be available, once the event below has fired.
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong :( Please check your username, password and make sure you're connected to the internet.", "login failed", MessageBoxButton.OK);
+                }
+                SparklrForWindowsPhone.Helpers.GlobalLoadingIndicator.Stop();
+            }
             if (!NavigationService.CanGoBack && e.NavigationMode == NavigationMode.Back)
                 App.Current.Terminate();
         }
@@ -186,7 +210,11 @@ namespace SparklrForWindowsPhone.Pages
 
         private void Register_Click(object sender, EventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Pages/Register.xaml", UriKind.Relative));
+            MessageBox.Show("We can't currently sign you up in the app, but we'll open the site up, you can sign up there!", "Can't sign up", MessageBoxButton.OK);
+            webBrowser.Navigate(new Uri("http://sparklr.me/#/settings", UriKind.RelativeOrAbsolute));
+            OpenBrowserAnimation1.Begin();
+            IsBrowserOpen = true;
+
         }
 
     }

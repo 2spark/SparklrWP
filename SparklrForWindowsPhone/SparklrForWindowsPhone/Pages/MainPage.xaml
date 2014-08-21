@@ -17,7 +17,7 @@
     mc:Ignorable="d"
     d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="True" Loaded="Mainpage_Loaded"
+    shell:SystemTray.IsVisible="True" Loaded="Mainpage_Loaded" BackKeyPress="OnBackKeyPress"
     >
 
 
@@ -43,6 +43,7 @@
                 <shell:ApplicationBarMenuItem IsEnabled="True" Text="Inbox"/>
                 <shell:ApplicationBarMenuItem Text="Settings..."/>
                 <shell:ApplicationBarMenuItem Text="About..." Click="ApplicationBarMenuItem_Click"/>
+                <shell:ApplicationBarMenuItem Text="Sign out..." Click="Signout_Click"/>
             </shell:ApplicationBar.MenuItems>
             <shell:ApplicationBarIconButton Text="Friends" IconUri="/Assets/AppBar/appbar.people.png"/>
             <shell:ApplicationBarIconButton Text="New post" IconUri="/Assets/AppBar/add.png" Click="NewPost_Click"/>

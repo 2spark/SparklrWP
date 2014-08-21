@@ -42,7 +42,11 @@ namespace SparklrForWindowsPhone
                 App.ViewModel.LoadData();
             }
         }
-
+        private void OnBackKeyPress(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            //No Need to show the user the log in page after they have logged in once
+            App.Current.Terminate();
+        }
         private async void Mainpage_Loaded(object sender, RoutedEventArgs e)
         {
             if(Housekeeper.LoginDataAvailable == false)
@@ -177,6 +181,20 @@ namespace SparklrForWindowsPhone
             }
 #endif
         }
+        /// <summary>
+        /// Sign off the user though the appbar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void Signout_Click(object sender, EventArgs e)
+        {
+            await Housekeeper.ServiceConnection.SignoffAsync();
+        
+            Housekeeper.RemoveCreds();
+            NavigationService.Navigate(new Uri("Login.xaml", UriKind.Relative));
+        }
+
+      
 
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()

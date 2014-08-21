@@ -78,6 +78,7 @@ namespace SparklrForWindowsPhone.ViewModels
                     for (int i = previousCount; i < stream.Posts.Count; i++)
                     {
                         this.Posts.Add(new PostViewModel(stream.Posts[i].Author, stream.Posts[i]));
+                        
                     }
                 }
 
