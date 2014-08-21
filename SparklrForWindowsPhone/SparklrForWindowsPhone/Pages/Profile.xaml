@@ -120,7 +120,7 @@
             </StackPanel>
         </StackPanel>
         <Grid Grid.Row="3" x:Name="Option1Viewer">
-            <telerikPrimitives:RadDataBoundListBox Margin="24,12,0,0"
+            <telerikPrimitives:RadDataBoundListBox Margin="24,12,24,0"
                                                     ItemsSource="{Binding Items}"
                                                     ItemTemplate="{StaticResource DataBoundListBoxItemTemplateWrapMode}">
                 <telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>

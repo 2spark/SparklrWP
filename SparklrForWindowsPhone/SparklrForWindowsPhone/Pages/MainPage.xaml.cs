@@ -67,7 +67,8 @@ namespace SparklrForWindowsPhone
 
         private async void NewPost_Click(object sender, System.EventArgs e)
         {
-            InputPromptClosedEventArgs result = await RadInputPrompt.ShowAsync("New Post");
+            
+            InputPromptClosedEventArgs result = await RadInputPrompt.ShowAsync(new string[] { "Post", "Extended" }, "New Post");
             
             if(result.Result == DialogResult.OK && !String.IsNullOrWhiteSpace(result.Text))
             {
@@ -83,6 +84,10 @@ namespace SparklrForWindowsPhone
                 {
                     MessageBox.Show("We were unable to submit your post. Please try again later.", "Sorry :(", MessageBoxButton.OK);
                 }
+            }
+            else if(result.Result == DialogResult.Cancel)
+            {
+                NavigationService.Navigate(new Uri("/Pages/Post.xaml", UriKind.Relative));
             }
         }
 

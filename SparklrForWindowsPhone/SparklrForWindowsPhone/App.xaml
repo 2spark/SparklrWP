@@ -3,7 +3,9 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
-    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone">
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:inputPrompt="clr-namespace:Telerik.Windows.Controls.InputPrompt;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives">
 
     <!--Application Resources-->
     <Application.Resources>
@@ -12,6 +14,33 @@
                 <ResourceDictionary Source="Resources/SparklrStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <local:LocalizedStrings xmlns:local="clr-namespace:SparklrForWindowsPhone" x:Key="LocalizedStrings"/>
+            <!--<ControlTemplate x:Key="ImageTemplate" TargetType="inputPrompt:RadInputPromptControl">
+                <Border Padding="12" Background="{StaticResource PhoneChromeBrush}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <ContentControl x:Name="PART_Title" HorizontalContentAlignment="Left" FontSize="{StaticResource PhoneFontSizeLarge}" FontFamily="{StaticResource PhoneFontFamilySemiBold}" Margin="{StaticResource PhoneMargin}" Foreground="White" Background="{x:Null}" />
+                        <StackPanel Grid.Row="1" Orientation="Horizontal">
+                            <ContentControl HorizontalContentAlignment="Left" VerticalContentAlignment="Top" x:Name="PART_Message" Margin="12, 12, 12, 24" />
+                        </StackPanel>
+                        <telerikPrimitives:RadTextBox x:Name="PART_TextBox1" Grid.Row="2" />
+                        
+                        <CheckBox x:Name="PART_CheckBox" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+                        <ContentControl Grid.Row="4" x:Name="PART_ButtonsContainer" HorizontalContentAlignment="Stretch">
+                            <ContentControl.ContentTemplate>
+                                <DataTemplate>
+                                    <StackPanel x:Name="PART_ButtonsPanel" Orientation="Horizontal"></StackPanel>
+                                </DataTemplate>
+                            </ContentControl.ContentTemplate>
+                        </ContentControl>
+                    </Grid>
+                </Border>
+            </ControlTemplate>-->
         </ResourceDictionary>
     </Application.Resources>
 
