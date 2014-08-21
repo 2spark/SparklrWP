@@ -1,4 +1,5 @@
-﻿using Microsoft.Phone.Shell;
+﻿using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,20 +13,26 @@ namespace SparklrForWindowsPhone.Helpers
     /// </summary>
     public static class GlobalLoadingIndicator
     {
-        private static ProgressIndicator progressIndicator
-        {
-            get
-            {
-                if(Microsoft.Phone.Shell.SystemTray.ProgressIndicator == null)
-                {
-                    ProgressIndicator p = new ProgressIndicator();
-                    p.IsIndeterminate = true;
-                    Microsoft.Phone.Shell.SystemTray.ProgressIndicator = p;
-                }
+        private static ProgressIndicator progressIndicator;
 
-                return Microsoft.Phone.Shell.SystemTray.ProgressIndicator;
+        public static void Initialize(PhoneApplicationFrame frame)
+        {
+            progressIndicator = new ProgressIndicator();
+            progressIndicator.IsIndeterminate = true;
+
+            frame.Navigated += OnRootFrameNavigated;
+        }
+
+        private static void OnRootFrameNavigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+            var ee = e.Content;
+            var pp = ee as PhoneApplicationPage;
+            if (pp != null)
+            {
+                pp.SetValue(SystemTray.ProgressIndicatorProperty, progressIndicator);
             }
         }
+
 
         private static int loadingCount = 0;
 

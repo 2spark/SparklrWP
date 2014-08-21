@@ -16,7 +16,7 @@
     mc:Ignorable="d"
     d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="False" Loaded="Mainpage_Loaded"
+    shell:SystemTray.IsVisible="True" Loaded="Mainpage_Loaded"
     >
 
 

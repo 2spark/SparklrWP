@@ -152,6 +152,7 @@ namespace SparklrForWindowsPhone
             // screen to remain active until the application is ready to render.
             //RootFrame = new PhoneApplicationFrame();
             RootFrame = new RadPhoneApplicationFrame();
+            Helpers.GlobalLoadingIndicator.Initialize(RootFrame);
             RootFrame.Navigated += CompleteInitializePhoneApplication;
 
             // Handle navigation failures
