@@ -102,11 +102,15 @@
     <Compile Include="Helpers\DebugHelper.cs" />
     <Compile Include="Helpers\DesignTimeHelper.cs" />
     <Compile Include="Helpers\EncryptionHelper.cs" />
+    <Compile Include="Helpers\ErrorReportHelper.cs" />
     <Compile Include="Helpers\GlobalLoadingIndicator.cs" />
     <Compile Include="Helpers\Housekeeper.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="Helpers\StringToUpperConverter.cs" />
     <Compile Include="Helpers\JumpListFirstItemTemplateSelector.cs" />
+    <Compile Include="Pages\DevOp.xaml.cs">
+      <DependentUpon>DevOp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -153,6 +157,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Pages\DevOp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -244,6 +252,7 @@
     <Content Include="Assets\Background2sparkLarge.png" />
     <Content Include="Assets\BadgeLogo.png" />
     <Content Include="Assets\bell.png" />
+    <Content Include="Assets\bellpressed.png" />
     <Content Include="Assets\Heart.png" />
     <Content Include="Assets\iconic.png" />
     <Content Include="Assets\Logo.png" />

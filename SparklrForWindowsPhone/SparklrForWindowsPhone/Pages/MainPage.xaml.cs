@@ -23,6 +23,7 @@ namespace SparklrForWindowsPhone
        
         Housekeeper Housekeeper = new Housekeeper();
         Connection conn = new Connection();
+        ErrorReportHelper errorReporter = new ErrorReportHelper();
 
         // Constructor
         public MainPage()
@@ -31,6 +32,7 @@ namespace SparklrForWindowsPhone
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
 
+           
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
 
@@ -44,6 +46,14 @@ namespace SparklrForWindowsPhone
             if (!App.ViewModel.IsDataLoaded)
             {
                 App.ViewModel.LoadData();
+            }
+            if(System.IO.IsolatedStorage.IsolatedStorageSettings.ApplicationSettings.Contains("LastError"))
+            {
+                errorReporter.SendErrorReport();
+            }
+            else
+            {
+                //DoNothing 
             }
         }
 
@@ -163,12 +173,19 @@ namespace SparklrForWindowsPhone
             await Housekeeper.ServiceConnection.SignoffAsync();
         
             Housekeeper.RemoveCreds();
-            NavigationService.Navigate(new Uri("Login.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Pages/Login.xaml", UriKind.Relative));
         }
 
         private void RadImageButton_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
+            
             NavigationService.Navigate(new Uri("/Pages/Notifications.xaml", UriKind.Relative));
         }
+
+        private void DevOp_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Pages/DevOp.xaml", UriKind.Relative));
+        }
+        
     }
 }

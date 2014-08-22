@@ -132,7 +132,17 @@ namespace SparklrForWindowsPhone
             }
             else
             {
-                MessageBox.Show("Looks like the app ran into a problem that wasn't handled!\n\nIf you see our highly trained team of monkeys show them this:\n\n"+e.ExceptionObject.Message+"\nStack Trace:\n"+e.ExceptionObject.StackTrace, "Uh Oh!", MessageBoxButton.OK);
+                var info = "Looks like the app ran into a problem that wasn't handled!\n\nIf you see our highly trained team of monkeys show them this:\n\n"+e.ExceptionObject.Message+"\nStack Trace:\n"+e.ExceptionObject.StackTrace;
+                try
+                {
+                    System.IO.IsolatedStorage.IsolatedStorageSettings.ApplicationSettings.Add("LastError", info);
+                }
+                catch
+                {
+                    System.IO.IsolatedStorage.IsolatedStorageSettings.ApplicationSettings.Remove("LastError");
+                    System.IO.IsolatedStorage.IsolatedStorageSettings.ApplicationSettings.Add("LastError", info);
+                }
+                MessageBox.Show(info, "Uh Oh!", MessageBoxButton.OK);
                 App.Current.Terminate();
             }
         }

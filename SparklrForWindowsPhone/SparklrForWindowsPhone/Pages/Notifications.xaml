@@ -20,12 +20,12 @@
 
 
     <Grid x:Name="LayoutRoot" Background="White">
-        
+
         <Grid.Resources>
             <Style TargetType="telerikPrimitives:ItemCheckBox" x:Key="DataBoudListBoxCheckBoxStyle">
                 <Setter Property="VerticalAlignment" Value="Center"/>
             </Style>
-            
+
             <helpers:JumpListFirstItemTemplateSelector x:Key="HeaderTemplateSelector">
                 <helpers:JumpListFirstItemTemplateSelector.FirstItemTemplate>
                     <DataTemplate>
@@ -42,7 +42,7 @@
                     </DataTemplate>
                 </helpers:JumpListFirstItemTemplateSelector.StandardItemTemplate>
             </helpers:JumpListFirstItemTemplateSelector>
-            
+
             <DataTemplate x:Key="JumpListItemTemplate">
                 <Grid Margin="0,0,0,12">
                     <Grid.ColumnDefinitions>
@@ -56,17 +56,17 @@
                     </StackPanel>
                 </Grid>
             </DataTemplate>
-            
+
         </Grid.Resources>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel  Background="#FF454050" Grid.Row="0" Orientation="Horizontal">
+        <StackPanel  Background="#FF454050" Grid.Row="0" Orientation="Horizontal" Margin="-12,0,0,0">
             <TextBlock FontSize="36" FontFamily="/SparklrForWindowsPhone;component/Fonts/Fonts.zip#Courgette" Margin="24,12,0,0" Foreground="White">
-				<Run Text="2spark*"/>
+            	<Run Text="2spark*"/>
             </TextBlock>
             <!--More Buttons here-->
             <!--<StackPanel Orientation="Horizontal" >
@@ -78,8 +78,7 @@
         </StackPanel>
 
         <Grid Grid.Row="1">
-            <telerikData:RadJumpList Margin="0" 
-                                     Grid.Row="1"
+            <telerikData:RadJumpList Margin="0,45,0,0"
                                      x:Name="JumpList"
                                      GroupHeaderTemplateSelector="{StaticResource HeaderTemplateSelector}"
                                      GroupDescriptorsSource="{Binding GroupDescriptors}"
@@ -87,6 +86,12 @@
                                      IsCheckModeEnabled="True"
                                      CheckBoxStyle="{StaticResource DataBoudListBoxCheckBoxStyle}"
                                      ItemTemplate="{StaticResource JumpListItemTemplate}" />
+            <TextBlock HorizontalAlignment="Left" Margin="10,1,0,0" TextWrapping="Wrap" Text="NOTIFICATIONS" VerticalAlignment="Top" Foreground="Black" FontSize="30" FontFamily="Segoe WP Semibold"/>
+            <HyperlinkButton Content="Mark all as read" HorizontalAlignment="Left" Margin="302,5,0,0" VerticalAlignment="Top" Width="178">
+                <HyperlinkButton.Foreground>
+                    <SolidColorBrush Color="#FF454050"/>
+                </HyperlinkButton.Foreground>
+            </HyperlinkButton>
         </Grid>
     </Grid>
 

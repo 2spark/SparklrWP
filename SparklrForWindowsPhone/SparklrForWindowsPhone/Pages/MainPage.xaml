@@ -12,7 +12,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Helpers="clr-namespace:SparklrForWindowsPhone.Helpers"
-    xmlns:inputPrompt="clr-namespace:Telerik.Windows.Controls.InputPrompt;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:inputPrompt="clr-namespace:Telerik.Windows.Controls.InputPrompt;assembly=Telerik.Windows.Controls.Primitives" x:Name="PhoneAppBar"
     x:Class="SparklrForWindowsPhone.MainPage"
     mc:Ignorable="d"
     d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
@@ -43,7 +43,17 @@
                 <shell:ApplicationBarMenuItem IsEnabled="True" Text="Inbox"/>
                 <shell:ApplicationBarMenuItem Text="Settings..."/>
                 <shell:ApplicationBarMenuItem Text="About..." Click="ApplicationBarMenuItem_Click"/>
-                <shell:ApplicationBarMenuItem Text="Sign out..." Click="Signout_Click"/>
+               <shell:ApplicationBarMenuItem Text="Sign out..." Click="Signout_Click"/>
+                <!-- REMOVE BEFORE SHIPING! -->
+                <!-- REMOVE BEFORE SHIPING! -->
+                <!-- REMOVE BEFORE SHIPING! -->
+                <!-- REMOVE BEFORE SHIPING! -->
+                <shell:ApplicationBarMenuItem x:Name="DevOp" Text="Developer Options" Click="DevOp_Click" IsEnabled="True"/>
+                <!-- REMOVE BEFORE SHIPING! -->
+                <!-- REMOVE BEFORE SHIPING! -->
+                <!-- REMOVE BEFORE SHIPING! -->
+                <!-- REMOVE BEFORE SHIPING! -->
+                <!-- REMOVE BEFORE SHIPING! -->
             </shell:ApplicationBar.MenuItems>
             <shell:ApplicationBarIconButton Text="Friends" IconUri="/Assets/AppBar/appbar.people.png"/>
             <shell:ApplicationBarIconButton Text="New post" IconUri="/Assets/AppBar/add.png" Click="NewPost_Click"/>
@@ -87,13 +97,13 @@
             <TextBlock FontSize="36" FontFamily="/SparklrForWindowsPhone;component/Fonts/Fonts.zip#Courgette" Margin="24,12,0,0" Foreground="White">
 				<Run Text="2spark*"/>
             </TextBlock>
-            <!--More Buttons here-->
-            <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right" Margin="258,0,0,0" >
+            <StackPanel x:Name="TopButttons" Orientation="Horizontal" HorizontalAlignment="Right" Margin="255,-4,0,-5" Width="124" >
             <!--<telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" Foreground="White" BorderThickness="0" />
             <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" Foreground="White" />
             <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" Foreground="White" />-->
-            <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/bell.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" Foreground="White" BorderThickness="4" Tap="RadImageButton_Tap" />
+            	<telerikPrimitives:RadImageButton x:Name="NotificationsButton" ButtonType="Custom" RestStateImageSource="/Assets/bell.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" Foreground="White" BorderThickness="4" Tap="RadImageButton_Tap" Margin="0,-3,0,3" Background="Transparent" IsChecked="False" PressedStateImageSource="/Assets/bellpressed.png" />
             </StackPanel>
+            <!--More Buttons here-->
         </StackPanel>
 
         <phone:Pivot Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Background="White" ItemsSource="{Binding Items}" x:Name="MainPivot" SelectionChanged="PivotChanged">
