@@ -40,6 +40,7 @@ namespace SparklrForWindowsPhone.ViewModels
         /// </summary>
         public void LoadData()
         {
+            IsDataLoaded = true;
             foreach(string s in Networks)
             {
                 Items.Add(new StreamPageViewModel(s));
