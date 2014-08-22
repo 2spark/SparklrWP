@@ -86,7 +86,7 @@ namespace SparklrForWindowsPhone.ViewModels
                 {
                     for(int i = 0; i < comments.Count; i++)
                     {
-                        Comments.Add(new ConversationViewMessage(comments[i].Message, new DateTime(1999, 1, 1), comments[i].Author == Housekeeper.ServiceConnection.CurrentUser ? ConversationViewMessageType.Incoming : ConversationViewMessageType.Outgoing));
+                        Comments.Add(new ConversationViewMessage(comments[i].ToString(), new DateTime(1999, 1, 1), comments[i].Author == Housekeeper.ServiceConnection.CurrentUser ? ConversationViewMessageType.Incoming : ConversationViewMessageType.Outgoing));
                     }
                 }
 
