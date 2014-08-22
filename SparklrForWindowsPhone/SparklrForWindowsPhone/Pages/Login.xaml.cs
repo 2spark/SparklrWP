@@ -27,6 +27,8 @@ namespace SparklrForWindowsPhone.Pages
         public Login()
         {
             InitializeComponent();
+
+            //TODO: This might keep the page in memory
             Housekeeper.ServiceConnection.CurrentUserIdentified += conn_CurrentUserIdentified;
         }
 
@@ -127,7 +129,6 @@ namespace SparklrForWindowsPhone.Pages
         void conn_CurrentUserIdentified(object sender, SparklrSharp.Sparklr.UserIdentifiedEventArgs e)
         {
             DebugHelper.LogDebugMessage("User identified as @{0}", Housekeeper.ServiceConnection.CurrentUser.Handle);
-            //Saves the info into the app settings -Suraj
             houseKeeper.SaveCreds(SparklrUsername.Text, SparklrPassword.Password);
             NavigationService.Navigate(new Uri("/Pages/MainPage.xaml", UriKind.Relative));
              

@@ -1,5 +1,5 @@
 ﻿<viewModels:PostViewModel
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:viewModels="clr-namespace:SparklrForWindowsPhone.ViewModels">
+    xmlns:viewModels="clr-namespace:SparklrForWindowsPhone.ViewModels" Username="Author" ProfileImage="http://d.sparklr.me/i/t4.jpg" Content="Hello there :) This is a test message" CommentCount="123" Network="in /samplenetwork">
 </viewModels:PostViewModel>    

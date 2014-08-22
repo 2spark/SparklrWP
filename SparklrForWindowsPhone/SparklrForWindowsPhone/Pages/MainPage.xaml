@@ -119,18 +119,19 @@
                                         </Grid.ColumnDefinitions>
                                         <Ellipse x:Name="imageProfile" Height="45" Width="45" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="0">
                                             <Ellipse.Fill>
-                                                <ImageBrush ImageSource="/Assets/Small.png"/>
+                                                <ImageBrush ImageSource="{Binding ProfileImage}"/>
                                             </Ellipse.Fill>
                                         </Ellipse>
-                                            <TextBlock Grid.Row="0" Grid.Column="1" x:Name="textName" HorizontalAlignment="Left" Margin="10,0" Text="{Binding User.Handle}" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" />
+                                            <TextBlock Grid.Row="0" Grid.Column="1" x:Name="textName" HorizontalAlignment="Left" Margin="10,0" Text="{Binding Username}" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" />
+                                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Network}" Foreground="Gray" HorizontalAlignment="Left" Margin="10,0" />
                                         <Border Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Background="#FF5D4C68" Margin="5" Width="45" Height="45" VerticalAlignment="Top">
                                             <Image Source="/Assets/Heart.png" Width="22" Height="22" />
                                         </Border>
                                         <Border Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" Background="#FF5D4C68" Margin="5" Width="45" Height="45" VerticalAlignment="Top">
-                                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="notesText" Text="{Binding Post.CommentCount, FallbackValue=0}" FontSize="20" FontWeight="Light" MaxWidth="60" Foreground="White" />
+                                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="notesText" Text="{Binding CommentCount, FallbackValue=0}" FontSize="20" FontWeight="Light" MaxWidth="60" Foreground="White" />
                                         </Border>
                                         <StackPanel Grid.Row="2" Grid.ColumnSpan="4" Orientation="Vertical">
-                                            <TextBlock Foreground="Black" Margin="0,5,5,5" Text="{Binding Post.Content}" TextWrapping="Wrap" FontSize="24" />
+                                            <TextBlock Foreground="Black" Margin="0,5,5,5" Text="{Binding Content}" TextWrapping="Wrap" FontSize="24" />
                                             <Image MaxHeight="700" MaxWidth="432" Stretch="None" />
                                         </StackPanel>
                                     </Grid>

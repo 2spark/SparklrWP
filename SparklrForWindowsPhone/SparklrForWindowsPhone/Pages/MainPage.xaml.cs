@@ -33,6 +33,9 @@ namespace SparklrForWindowsPhone
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
+
+            //TODO: This might keep the page in memory
+            conn.CurrentUserIdentified += conn_CurrentUserIdentified;
         }
 
         // Load data for the ViewModel Items
@@ -55,14 +58,19 @@ namespace SparklrForWindowsPhone
             if(Housekeeper.LoginDataAvailable == false)
             {
                 NavigationService.Navigate(new Uri("/Pages/Login.xaml", UriKind.Relative));
-            } 
-            else
+            }
+            else if (!App.ViewModel.IsDataLoaded)
             {
-                //Gets Login Info
+                bool loginSuccess = false;
                 Housekeeper.GetCreds();
                 Helpers.GlobalLoadingIndicator.Start();
-                await conn.SigninAsync(Housekeeper.SparklrUsername, Housekeeper.SparklrPassword);
-                conn.CurrentUserIdentified += conn_CurrentUserIdentified;
+                loginSuccess = await conn.SigninAsync(Housekeeper.SparklrUsername, Housekeeper.SparklrPassword);
+                
+                if(!loginSuccess)
+                {
+                    MessageBox.Show("We were unable to log you in. Pleas reenter your username and password", "Sorry...", MessageBoxButton.OK);
+                    NavigationService.Navigate(new Uri("/Pages/Login.xaml", UriKind.Relative));
+                }
             }
         }
 

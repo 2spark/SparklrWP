@@ -5,6 +5,10 @@
 
     <vm:MainViewModel.Items>
         <vm:StreamPageViewModel Network="following">
+            <vm:StreamPageViewModel.Posts>
+                <vm:PostViewModel Username="Test 1" Content="Hello there" ProfileImage="http://d.sparklr.me/i/t4.jpg" Network="" />
+                <vm:PostViewModel Username="Test 2" Content="This is a longer test message" ProfileImage="http://d.sparklr.me/i/t1.jpg" CommentCount="136" Network="in /funny" />
+            </vm:StreamPageViewModel.Posts>
         </vm:StreamPageViewModel>
         <vm:StreamPageViewModel Network="everything" />
         <vm:StreamPageViewModel Network="music" />
