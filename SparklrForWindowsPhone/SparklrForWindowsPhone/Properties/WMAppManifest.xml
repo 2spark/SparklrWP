@@ -2,7 +2,7 @@
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2014/deployment" AppPlatformVersion="8.1">
   <DefaultLanguage xmlns="" code="en-US" />
   <App xmlns="" ProductID="{2299a0fb-3c44-4936-b713-d3c083720b25}" Title="2Spark" RuntimeType="Silverlight" Version="0.1.0.0" Genre="apps.normal" Author="2Spark WP Team" Description="Sample description" SDOptOut="false" BackUpOptOut="false" Publisher="Jonathan Warner" PublisherID="{51f93a9c-ff36-4291-8339-b4d07815d916}" NotificationService="MPN">
-    <IconPath IsRelative="true" IsResource="false">Assets\Small.png</IconPath>
+    <IconPath IsRelative="true" IsResource="false">Assets\Background2spark.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
       <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
@@ -16,26 +16,25 @@
     </Tasks>
     <Tokens>
       <PrimaryToken TokenID="SparklrForWindowsPhoneToken" TaskName="_default">
-        <TemplateIconic>
-          <SmallImageURI IsRelative="true" IsResource="false">Assets\smalliconic.png</SmallImageURI>
+        <TemplateFlip>
+          <SmallImageURI IsRelative="true" IsResource="false">Assets\Background2spark.png</SmallImageURI>
           <Count>0</Count>
-          <IconImageURI IsRelative="true" IsResource="false">Assets\iconic.png</IconImageURI>
-          <Title>
-          </Title>
-          <Message>
-          </Message>
-          <BackgroundColor>
-          </BackgroundColor>
-          <HasLarge>True</HasLarge>
-          <LargeContent1>
-          </LargeContent1>
-          <LargeContent2>
-          </LargeContent2>
-          <LargeContent3>
-          </LargeContent3>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Background2spark.png</BackgroundImageURI>
+          <Title>2spark</Title>
+          <BackContent>
+          </BackContent>
+          <BackBackgroundImageURI IsRelative="true" IsResource="false">
+          </BackBackgroundImageURI>
+          <BackTitle>
+          </BackTitle>
+          <LargeBackgroundImageURI IsRelative="true" IsResource="false">Assets\Background2sparkLarge.png</LargeBackgroundImageURI>
+          <LargeBackContent />
+          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
+          </LargeBackBackgroundImageURI>
           <DeviceLockImageURI IsRelative="true" IsResource="false">
           </DeviceLockImageURI>
-        </TemplateIconic>
+          <HasLarge>True</HasLarge>
+        </TemplateFlip>
       </PrimaryToken>
     </Tokens>
     <ScreenResolutions>

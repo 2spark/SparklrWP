@@ -106,6 +106,7 @@
     <Compile Include="Helpers\Housekeeper.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="Helpers\StringToUpperConverter.cs" />
+    <Compile Include="Helpers\JumpListFirstItemTemplateSelector.cs" />
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -116,6 +117,9 @@
     <Compile Include="Commands\SendAnEmailCommand.cs" />
     <Compile Include="Pages\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Notifications.xaml.cs">
+      <DependentUpon>Notifications.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Post.xaml.cs">
       <DependentUpon>Post.xaml</DependentUpon>
@@ -162,6 +166,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Notifications.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -212,6 +220,7 @@
   <ItemGroup>
     <Content Include="Assets\AppBar\appbar.door.enter.png" />
     <Content Include="Assets\AppBar\appbar.people.png" />
+    <Content Include="Assets\AppBar\images.png" />
     <Content Include="Assets\AppBar\next.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -231,7 +240,10 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Background2spark.png" />
+    <Content Include="Assets\Background2sparkLarge.png" />
     <Content Include="Assets\BadgeLogo.png" />
+    <Content Include="Assets\bell.png" />
     <Content Include="Assets\Heart.png" />
     <Content Include="Assets\iconic.png" />
     <Content Include="Assets\Logo.png" />
@@ -263,6 +275,7 @@
     <Content Include="Pages\Images\CompanyLogo.png" />
     <Content Include="Pages\Images\Frame.png" />
     <Content Include="Pages\Images\FrameThumbnail.png" />
+    <Content Include="Pages\Images\Select.png" />
     <Content Include="Pages\Images\SendIcon.png" />
   </ItemGroup>
   <ItemGroup>

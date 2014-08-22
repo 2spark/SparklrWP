@@ -59,7 +59,7 @@
                             </Ellipse.Fill>
                         </Ellipse>
                         <TextBlock Grid.Row="0" Grid.Column="1" x:Name="textName" HorizontalAlignment="Left" Margin="10,0" Text="{Binding Username}" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" />
-                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Network}" Foreground="Gray" />
+                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Network}" Foreground="Gray" Margin="10,0" />
                         <Border Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Background="#FF5D4C68" Margin="5" Width="45" Height="45" VerticalAlignment="Top">
                             <Image Source="/Assets/Heart.png" Width="22" Height="22" />
                         </Border>
@@ -89,7 +89,7 @@
                     <telerikData:RadConversationView ItemsSource="{Binding Comments}" TextBoxVisibility="Collapsed" IsHitTestVisible="False" ScrollViewer.VerticalScrollBarVisibility="Disabled">
                     </telerikData:RadConversationView>
                     
-                    <telerikPrimitives:RadTextBox ActionButtonVisibility="Visible" Watermark="add comment..." ClearButtonVisibility="Collapsed" AcceptsReturn="True">
+                    <telerikPrimitives:RadTextBox ActionButtonVisibility="Visible" Watermark="add comment..." ClearButtonVisibility="Collapsed" AcceptsReturn="True" BorderBrush="{StaticResource PhoneTextBoxEditBorderBrush}">
                         <telerikPrimitives:RadTextBox.ActionButtonStyle>
                             <Style TargetType="telerikPrimitives:RadImageButton">
                                 <Setter Property="RestStateImageSource" Value="/Assets/Comment.png" /> <!-- TODO: add actual image -->

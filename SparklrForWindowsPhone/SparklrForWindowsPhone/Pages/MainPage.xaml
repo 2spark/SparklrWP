@@ -59,6 +59,10 @@
             <RowDefinition Height="70" />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         <!-- LOCALIZATION NOTE:
             To localize the displayed strings copy their values to appropriately named
             keys in the app's neutral language resource file (AppResources.resx) then
@@ -79,20 +83,20 @@
          -->
         
         <!--Pivot Control-->
-        <StackPanel  Background="#FF454050" Grid.Row="0" Orientation="Horizontal">
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="2"  Background="#FF454050" Grid.Row="0" Orientation="Horizontal">
             <TextBlock FontSize="36" FontFamily="/SparklrForWindowsPhone;component/Fonts/Fonts.zip#Courgette" Margin="24,12,0,0" Foreground="White">
 				<Run Text="2spark*"/>
             </TextBlock>
             <!--More Buttons here-->
-            <!--<StackPanel Orientation="Horizontal" >
-            <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" Foreground="White" BorderThickness="0" />
+            <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right" Margin="258,0,0,0" >
+            <!--<telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" Foreground="White" BorderThickness="0" />
             <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" Foreground="White" />
-            <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" Foreground="White" />
-            <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" Foreground="White" />
-            </StackPanel>-->
+            <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/BadgeLogo.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" Foreground="White" />-->
+            <telerikPrimitives:RadImageButton ButtonType="Custom" RestStateImageSource="/Assets/bell.png" ButtonShape="Ellipse" VerticalAlignment="Center" ImageStretch="Fill" Foreground="White" BorderThickness="4" Tap="RadImageButton_Tap" />
+            </StackPanel>
         </StackPanel>
 
-        <phone:Pivot Grid.Row="1" Background="White" ItemsSource="{Binding Items}" x:Name="MainPivot" SelectionChanged="PivotChanged">
+        <phone:Pivot Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Background="White" ItemsSource="{Binding Items}" x:Name="MainPivot" SelectionChanged="PivotChanged">
             <phone:Pivot.HeaderTemplate>
                 <DataTemplate>
                     <TextBlock FontSize="30" FontFamily="Segoe WP Semibold" Foreground="Black" Text="{Binding Network, Converter={StaticResource StringToUpperConverter}}" />

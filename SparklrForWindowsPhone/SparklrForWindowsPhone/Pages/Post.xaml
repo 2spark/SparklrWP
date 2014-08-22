@@ -49,6 +49,7 @@
                 
             </shell:ApplicationBar.MenuItems>
             <shell:ApplicationBarIconButton Text="New post" IconUri="/Assets/AppBar/add.png" Click="NewPost_Click"/>
+            <shell:ApplicationBarIconButton Text="Add image" IconUri="/Assets/AppBar/images.png" />
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
     

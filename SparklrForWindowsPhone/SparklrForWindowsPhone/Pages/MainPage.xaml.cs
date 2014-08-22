@@ -82,28 +82,7 @@ namespace SparklrForWindowsPhone
 
         private async void NewPost_Click(object sender, System.EventArgs e)
         {
-            
-            InputPromptClosedEventArgs result = await RadInputPrompt.ShowAsync(new string[] { "Post", "Extended" }, "New Post");
-            
-            if(result.Result == DialogResult.OK && !String.IsNullOrWhiteSpace(result.Text))
-            {
-#if DEBUG
-                Helpers.DebugHelper.LogDebugMessage("Sending post: {0}", result.Text);
-#endif
-                Helpers.GlobalLoadingIndicator.Start();
-                bool success = await Housekeeper.ServiceConnection.SubmitPostAsync(result.Text);
-                //TODO: Check if post exceeds maximum char limit
-                Helpers.GlobalLoadingIndicator.Stop();
-
-                if(!success)
-                {
-                    MessageBox.Show("We were unable to submit your post. Please try again later.", "Sorry :(", MessageBoxButton.OK);
-                }
-            }
-            else if(result.Result == DialogResult.Cancel)
-            {
-                NavigationService.Navigate(new Uri("/Pages/Post.xaml", UriKind.Relative));
-            }
+            NavigationService.Navigate(new Uri("/Pages/Post.xaml", UriKind.Relative));
         }
 
         private void ApplicationBarMenuItem_Click(object sender, EventArgs e)
@@ -185,6 +164,11 @@ namespace SparklrForWindowsPhone
         
             Housekeeper.RemoveCreds();
             NavigationService.Navigate(new Uri("Login.xaml", UriKind.Relative));
+        }
+
+        private void RadImageButton_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Pages/Notifications.xaml", UriKind.Relative));
         }
     }
 }
