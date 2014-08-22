@@ -43,7 +43,8 @@ namespace SparklrForWindowsPhone.Pages
                 }
                 else
                 {
-                    NavigationService.Navigate(new Uri("/Pages/MainPage.xaml", UriKind.Relative));
+                    //We use GoBack here to prevent circular navigation.
+                    NavigationService.GoBack();
                 }
             }
         }

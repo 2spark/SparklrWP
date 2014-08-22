@@ -23,6 +23,7 @@ namespace SparklrForWindowsPhone
        
         Housekeeper Housekeeper = new Housekeeper();
         Connection conn = new Connection();
+
         // Constructor
         public MainPage()
         {
@@ -42,11 +43,13 @@ namespace SparklrForWindowsPhone
                 App.ViewModel.LoadData();
             }
         }
+
         private void OnBackKeyPress(object sender, System.ComponentModel.CancelEventArgs e)
         {
             //No Need to show the user the log in page after they have logged in once
             App.Current.Terminate();
         }
+
         private async void Mainpage_Loaded(object sender, RoutedEventArgs e)
         {
             if(Housekeeper.LoginDataAvailable == false)
@@ -129,24 +132,6 @@ namespace SparklrForWindowsPhone
             App.ViewModel.LoadMore(MainPivot.SelectedIndex);
         }
 
-        public static void Show(
-    ControlTemplate template,
-    object title,
-    IEnumerable<object> buttonsContent,
-    object message = null,
-    InputMode inputMode = InputMode.Text,
-    Style inputStyle = null,
-    object checkBoxContent = null,
-    bool isCheckBoxChecked = false,
-    bool vibrate = false,
-    HorizontalAlignment horizontalAlignment = HorizontalAlignment.Stretch,
-    VerticalAlignment verticalAlignment = VerticalAlignment.Top,
-    Action<InputPromptClosedEventArgs> closedHandler = null,
-    Action<KeyEventArgs> keyDownHandler = null)
-        {
-            //New post code goes here
-        }
-
         private void Search_Click(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/Pages/Search.xaml", UriKind.Relative));
@@ -193,23 +178,5 @@ namespace SparklrForWindowsPhone
             Housekeeper.RemoveCreds();
             NavigationService.Navigate(new Uri("Login.xaml", UriKind.Relative));
         }
-
-      
-
-        // Sample code for building a localized ApplicationBar
-        //private void BuildLocalizedApplicationBar()
-        //{
-        //    // Set the page's ApplicationBar to a new instance of ApplicationBar.
-        //    ApplicationBar = new ApplicationBar();
-
-        //    // Create a new button and set the text value to the localized string from AppResources.
-        //    ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.add.rest.png", UriKind.Relative));
-        //    appBarButton.Text = AppResources.AppBarButtonText;
-        //    ApplicationBar.Buttons.Add(appBarButton);
-
-        //    // Create a new menu item with the localized string from AppResources.
-        //    ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
-        //    ApplicationBar.MenuItems.Add(appBarMenuItem);
-        //}
     }
 }
