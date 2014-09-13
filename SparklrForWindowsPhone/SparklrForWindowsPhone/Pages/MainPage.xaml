@@ -9,6 +9,7 @@
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:telerikTextBox="clr-namespace:Telerik.Windows.Controls.PhoneTextBox;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:telerikDataBoundListbox="clr-namespace:Telerik.Windows.Controls.DataBoundListBox;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:sparklrControls="clr-namespace:SparklrForWindowsPhone.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Helpers="clr-namespace:SparklrForWindowsPhone.Helpers"
@@ -17,7 +18,7 @@
     mc:Ignorable="d"
     d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="True" Loaded="Mainpage_Loaded" BackKeyPress="OnBackKeyPress"
+    shell:SystemTray.IsVisible="True" shell:SystemTray.BackgroundColor="#FF454050" Loaded="Mainpage_Loaded" BackKeyPress="OnBackKeyPress"
     >
 
 
@@ -146,7 +147,7 @@
                                         </Border>
                                         <StackPanel Grid.Row="2" Grid.ColumnSpan="4" Orientation="Vertical">
                                             <TextBlock Foreground="Black" Margin="0,5,5,5" Text="{Binding Content}" TextWrapping="Wrap" FontSize="24" />
-                                            <Image MaxHeight="700" MaxWidth="432" Stretch="None" />
+                                            <!--<sparklrControls:ExtendedImageControl x:Name="postImage" Stretch="None" />-->
                                         </StackPanel>
                                     </Grid>
                                 </ListBoxItem>
