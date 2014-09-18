@@ -42,7 +42,7 @@
                     Margin="12,0,12,0" 
                     FontSize="{StaticResource PhoneFontSizeLarge}" FontFamily="/SparklrForWindowsPhone;component/Fonts/Fonts.zip#Courgette"/>
                 <TextBlock 
-                    Text="v.0.0.1.0" 
+                    Text="v.0.1.88.1" 
                     Margin="12,0,12,0" 
                     FontSize="{StaticResource PhoneFontSizeNormal}"/>
             </StackPanel>
