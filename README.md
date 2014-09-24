@@ -15,7 +15,8 @@ It is an upcoming client for the social network [Sparklr*](http://www.sparklr.me
 - [ ] repost
 
 ##How do I get it?
-The app is currently under heavy development, so it's not available in the marketplace right now. We do however have a build server that offers snapshots. If you have an unlocked device, head over to 
+The app is currently under heavy development, BUT it's available on the WPStore right [now](http://www.windowsphone.com/s?appid=92b06a83-3534-4897-96d6-332e60dd3c53).
+We do however have a build server that offers snapshots. If you have an unlocked device, head over to 
 ###https://ci.appveyor.com/project/Marocco2/sparklrwp
 or
 ###[Watch the releases :)](https://github.com/2spark/SparklrWP/releases)
